@@ -7,7 +7,7 @@ const Projects = [
     txt: "A full-stack travel platform helping users discover and book hidden gems in Taiwan. Features interactive maps, real-time itinerary planning, and a robust backend to handle user reviews and bookings.",
     github: "",
     figma: "",
-    live: "",
+    live: "https://taiwanexplorers.onrender.com/",
   },
   {
     id: 15,

@@ -1,15 +1,15 @@
 import { Rows3, Grid2x2 } from "lucide-react";
 import styles from './projects.module.css';
 
-const GridRowToggle = () => {
+const GridRowToggle = ({ view, onToggle}) => {
   return (
     <div className={styles.gridRowToggle}>
-      <div className={styles.gridToggle}>
-        <Rows3 />
-      </div>
-      <div className={styles.rowToggle}>
-        <Grid2x2 />
-      </div>
+      <button className={`${styles.gridToggle} ${view === 'grid' ? styles.activeToggle : ''}`} onClick={() => onToggle('grid')} >
+        <Grid2x2 width={20} height={20}/>
+      </button>
+      <button className={`${styles.rowToggle} ${view === 'row' ? styles.activeToggle : ''}`} onClick={() => onToggle('row')}>
+        <Rows3 width={20} height={20}/>
+      </button>
     </div>
   );
 };

@@ -9,11 +9,16 @@ import Footer from "../ui/Footer";
 /* Data */
 import projects from "../../data/DataProjects";
 /* Styles */
-import styles from './projects.module.css';
+import styles from "./projects.module.css";
 
 const Projects = () => {
   // selectedProject is an obj that stores a component's prop, to access a prop => selectedProject.prop_example
   const [selectedProject, setSelectedProject] = useState(projects[0]);
+  const [view, setView] = useState("grid");
+
+  const handleView = (view) => {
+    setView(view);
+  };
 
   return (
     <div className={styles.projectsPage}>
@@ -29,18 +34,35 @@ const Projects = () => {
 
         <div className={styles.projects}>
           <div className={styles.projectsOptions}>
-            <GridRowToggle />
+            <GridRowToggle view={view} onToggle={handleView} />
             <PanelRightOpen />
           </div>
-          <div className={styles.projectsList}>
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                onSelect={setSelectedProject}
-              ></ProjectCard>
-            ))}
-          </div>
+          {view === "grid" ? (
+            <div className={styles.projectsList}>
+              {projects.map((project) => (
+                <div className={styles.projGridCard}>
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onSelect={setSelectedProject}
+                  ></ProjectCard>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.projectsRowList}>
+              {projects.map((project) => (
+                <div className={styles.projRowCard}>
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onSelect={setSelectedProject}
+                  ></ProjectCard>
+                </div>
+              ))}
+            </div>
+          )}
+                  <Footer />
         </div>
       </div>
       {/* に */}

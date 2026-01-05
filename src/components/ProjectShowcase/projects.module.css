@@ -6,6 +6,8 @@
   flex-direction: row;
   overflow: hidden;
   height: calc(100dvh);
+  background-color: var(--sand);
+  
 }
 
 .projectsContainer {    
@@ -18,12 +20,20 @@
   
   overflow-y: auto;
   overflow-x: hidden;
+
   border-right: var(--border-gray) 1px solid;
 }
 
 .projects {
-  border-top: 1px solid var(--border-gray);
   background-color: var(--sand);
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
+
+  border-top: 1px solid var(--border-gray);
 }
 
 /* ============================================
@@ -63,6 +73,14 @@
   margin-top: 2rem;
 }
 
+.projectsRowList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .projectsOptions {
   display: flex;
   align-items: center;
@@ -75,7 +93,7 @@
 /* ============================================
    PROJECT CARDS
    ============================================ */
-.projCard {
+.projGridCard {
   margin: 1rem;
   padding: 2rem;
   min-height: 200px;
@@ -85,6 +103,30 @@
   background-color: var(--sand);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s;
+}
+
+.projRowCard {
+  margin: 1rem;
+  padding: 2rem;
+  min-height: 200px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  background-color: var(--sand);
+}
+
+.projRowCard .projCardContent {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.projRowCard .projImg {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .projCard:hover {
@@ -100,7 +142,6 @@
 
 .projTxt {
   margin-bottom: 1.5rem;
-  max-width: 400px;
   height: 144px;
 }
 
@@ -211,13 +252,14 @@
   content: "";
   position: absolute;
   width: 1px;
-  height: 2px;
+  height: 100%;
   background: rgba(0, 0, 0, 0.1);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 5;
 }
 
-.gridRowToggle > div:first-child {
+.gridRowToggle > button:first-child {
   display: flex;
   justify-content: center;
   flex: 1;
@@ -226,7 +268,7 @@
   padding: 0.3rem 0.4rem 0.3rem 0.6rem;
 }
 
-.gridRowToggle > div:nth-child(2) {
+.gridRowToggle > button:nth-child(2) {
   display: flex;
   justify-content: center;
   flex: 1;
@@ -235,10 +277,11 @@
   padding: 0.3rem 0.4rem 0.3rem 0.6rem;
 }
 
-.gridRowToggle .gridToggle:hover {
-  background-color: rgba(250, 72, 2, 0.914);
+.gridRowToggle .gridToggle:hover, .gridRowToggle .rowToggle:hover {
+  background-color: rgba(250, 72, 2, 0.914);  
 }
 
-.gridRowToggle .rowToggle:hover {
+.activeToggle {
   background-color: rgba(250, 72, 2, 0.914);
+  color: white;
 }
