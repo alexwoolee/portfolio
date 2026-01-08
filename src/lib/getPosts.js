@@ -5,7 +5,9 @@ import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 
 // Sets the post directory automatically
-const postDirectory;
+const postDirectory = process.cwd() + '/posts';
+
+// Get sorted posts data
 
 export async function getPostData() {
 

@@ -41,7 +41,7 @@ const Projects = [
   },
   {
     id: 2,
-    authors: "Alex Lee, Alexander K., Emily T., Camille Ng, Josevan S. Wijaya",
+    authors: "Alex L., Alexander K., Emily T., Camille Ng, Josevan S. Wijaya",
     img: "/projects/cover-erm.png",
     title: "Emergency Reporting System",
     txt: "Manage and report emergencies efficiently in real time.",
@@ -51,7 +51,7 @@ const Projects = [
   },
   {
     id: 13,
-    authors: "Alex Lee, Eddie Ng, Ryan Fu, Kevin",
+    authors: "Alex Lee, Eddie Nguyen, Ryan Fu, Kenny Zhang",
     img: "/projects/cover-dearly.png",
     title: "Dearly",
     txt: "A web application used to format emails to loved ones.",

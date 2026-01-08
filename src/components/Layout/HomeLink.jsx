@@ -4,13 +4,13 @@ import styles from './layout.module.css';
 const HomeLink = ({ path, img, title, info }) => {
   return (
     <div>
-      <NavLink
+      <NavLink 
         to={path}
         className={({ isActive }) => `${styles.link} ${isActive ? styles.activeLink : ""}`}
       >
         <img src={img} alt={path} className={styles.linkImg}></img>
         <div>
-          <p className={`${styles.linkTitle} title-sm lg:block hidden`}>{title}</p>
+          <p className={`${styles.linkTitle} title-sm block`}>{title}</p>
         </div>
       </NavLink>
     </div>

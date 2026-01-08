@@ -1,0 +1,39 @@
+/* ============================================
+   BLOG PAGE - MAIN CONTAINER
+   ============================================ */
+.content {
+  background-color: var(--sand);
+  padding: 4rem 4rem;
+}
+
+/* ============================================
+   BLOG LINK 
+   ============================================ */
+.blogLink {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(135deg, var(--sand) 0%, #e6dfd8 100%);
+  border: 1px solid var(--border-gray);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.linkTitle {
+  font-size: 36px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.linkDate {
+  font-size: 32px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.linkImg {
+  width: 140px;
+  height: 140px;
+  margin-right: 2rem;
+  border-radius: 0.2rem;
+}

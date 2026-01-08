@@ -62,7 +62,7 @@ const Projects = () => {
               ))}
             </div>
           )}
-                  <Footer />
+          <Footer />
         </div>
       </div>
       {/* に */}

@@ -24,7 +24,7 @@
 .musicCover {
   width: 64px;
   height: 64px;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   object-fit: cover;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -89,8 +89,8 @@
 .playBtn {
   width: 40px;
   height: 40px;
-  background-color: var(--black);
   color: var(--white);
+  background-color: var(--dark-murk);
 }
 
 .playBtn:hover {
