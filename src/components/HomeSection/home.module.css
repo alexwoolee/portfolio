@@ -41,13 +41,12 @@
 /* ============================================
    ABOUT PAGE - BIO SECTION
    ============================================ */
-.bio {
-  margin: 0 0 2rem 0;
-}
 
 .bioCtn {
-  max-width: 1200px;
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+  padding: 0 2.5rem;
 }
 
 /* ============================================
@@ -388,7 +387,7 @@
 .courseGrid {
   display: grid;
   /* Creates 2 columns automatically, switches to 1 on mobile */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem 2rem;
 }
 
@@ -471,23 +470,33 @@
    ============================================ */
 .contactCtn {
   padding: 2rem;
-  box-sizing: border-box;  
+  box-sizing: border-box;
   color: orangered;
-  background-color: rgba(0, 0, 0, 0.05); 
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 1.2rem;
-  max-width: 1200px;  
+  max-width: 1200px;
   width: 100%;
-  margin: 4rem auto 0rem auto; 
+  margin: 4rem auto 0rem auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
+@media screen and (width <= 1048px) {
+  .contactCtn {
+    flex-direction: column;
+  }
+  .contactTxt {
+    width: 100%;
+  }
+}
+
 .contactText {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  width: 65%;
+  max-width: 556px;
+  width: 100%;
 }
 
 .contactText h1 {

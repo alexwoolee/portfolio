@@ -25,3 +25,6 @@ dist-ssr
 
 # Secret
 .env
+
+# Posts 
+./src/posts/*.md
