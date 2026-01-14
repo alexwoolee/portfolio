@@ -2,7 +2,7 @@
 title: Desktop Pet
 date: Jan 12, 2026
 tags: [nextjs, blog]
-cover: "../../../public/blog/scarlet.jpg"
+cover: "/blog/scarlet.jpg"
 ---
 # How I Made the BEST "Desktop Pet" 
 During a hackathon, me and a couple buddies decided 
