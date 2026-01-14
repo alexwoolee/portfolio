@@ -51,6 +51,7 @@
     "postcss": "^8.5.4",
     "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.8",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-node-polyfills": "^0.2.0"
   }
 }
