@@ -1,33 +1,39 @@
-/* Third-party imports / Framework imports */
-import { Outlet } from "react-router-dom";
-import { useState } from "react";
+/* React hooks */
+import { useState } from "react"
+
+/* Third-party libraries */
+import { Outlet } from "react-router-dom"
+
 /* Components */
-import HomeLink from "./HomeLink";
-import SettingsLink from "./SettingsLink";
-import WeatherTime from "./WeatherTime";
-import MusicCard from "../media/MusicCard";
-import Controls from "./Controls";
-/* Sidebar assets */
-import homeImg from "../../assets/sidebar/rain.png";
-import aboutImg from "../../assets/sidebar/together.png";
-import projImg from "../../assets/sidebar/proud.png";
-import blogImg from "../../assets/sidebar/beauty.png";
+import HomeLink from "./HomeLink"
+import SettingsLink from "./SettingsLink"
+import WeatherTime from "./WeatherTime"
+import MusicCard from "../media/MusicCard"
+import Controls from "./Controls"
+
+/* Assets */
+import homeImg from "../../assets/sidebar/rain.png"
+import aboutImg from "../../assets/sidebar/together.png"
+import projImg from "../../assets/sidebar/proud.png"
+import blogImg from "../../assets/sidebar/beauty.png"
+
+/* Icons */
+import { PanelLeft } from "lucide-react"
+import { Music } from "lucide-react"
+
 /* Styles */
-import styles from "./layout.module.css";
-// Icons
-import { PanelLeft } from "lucide-react";
-import { Music } from "lucide-react";
+import styles from "./layout.module.css"
 
 const NewFront = () => {
   const [minimized, setMinimized] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const handleClick = () => {
-    setMinimized(!minimized);
-    console.log(`Minimized is now set to ${minimized}...`);
-  };
+    setMinimized(!minimized)
+    console.log(`Minimized is now set to ${minimized}...`)
+  }
 
-  const handleSettingsOpen = () => setIsSettingsOpen(!isSettingsOpen);
+  const handleSettingsOpen = () => setIsSettingsOpen(!isSettingsOpen)
 
   return (
     <div id="main">
@@ -69,4 +75,4 @@ const NewFront = () => {
   );
 };
 
-export default NewFront;
+export default NewFront

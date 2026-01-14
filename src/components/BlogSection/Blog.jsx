@@ -1,10 +1,12 @@
-/* Styles */
-import styles from "./blog.module.css";
+/* Third-party libraries */
+import matter from "gray-matter"
+
 /* Components */
-import BlogLink from "./BlogLink.jsx";
-import Footer from "../ui/Footer.jsx";
-/* Libraries */
-import matter from "gray-matter";
+import BlogLink from "./BlogLink.jsx"
+import Footer from "../ui/Footer.jsx"
+
+/* Styles */
+import styles from "./blog.module.css"
 
 const Blog = () => {
   // Imports all .md files as raw text strings (including frontmatter).
@@ -50,4 +52,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blog

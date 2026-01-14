@@ -1,25 +1,8 @@
-import { useState } from "react";
-// --- Styles ---
-import styles from "./home.module.css";
+/* React hooks */
+import { useState } from "react"
 
-// --- Assets ---
-import PFP from "../../assets/gifs/doggiecorgi_swim.gif";
-import HMART from "../../assets/experience/HMART.jpeg";
-import MOCC from "../../assets/experience/MOCC.png";
-import SFU from "../../assets/experience/SFU.png";
-
-// --- Components ---
-import LanguageSkills from "./LanguageSkills.jsx";
-import GeneralSkills from "./GeneralSkills.jsx";
-import ExperienceCard from "./ExperienceCard.jsx";
-import ProjectButton from "./ProjectButton.jsx";
-import Button from "../ui/Button.jsx";
-import Education from "./Education.jsx";
-import ContactMe from "./ContactMe.jsx";
-import Footer from "../ui/Footer.jsx";
-
-// --- React Icons Imports ---
-import { FaAws, FaDocker, FaReact, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa";
+/* Third-party libraries */
+import { FaAws, FaDocker, FaReact, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa"
 import { 
   SiFigma, 
   SiVercel, 
@@ -29,12 +12,33 @@ import {
   SiMongodb, 
   SiNextdotjs, 
   SiExpress 
-} from "react-icons/si";
-import { C } from "../icons/icon";
+} from "react-icons/si"
+
+/* Components */
+import LanguageSkills from "./LanguageSkills.jsx"
+import GeneralSkills from "./GeneralSkills.jsx"
+import ExperienceCard from "./ExperienceCard.jsx"
+import ProjectButton from "./ProjectButton.jsx"
+import Button from "../ui/Button.jsx"
+import Education from "./Education.jsx"
+import ContactMe from "./ContactMe.jsx"
+import Footer from "../ui/Footer.jsx"
+
+/* Assets */
+import PFP from "../../assets/gifs/doggiecorgi_swim.gif"
+import HMART from "../../assets/experience/HMART.jpeg"
+import MOCC from "../../assets/experience/MOCC.png"
+import SFU from "../../assets/experience/SFU.png"
+
+/* Icons */
+import { C } from "../icons/icon"
+
+/* Styles */
+import styles from "./home.module.css"
 
 const Home = () => {
-  const [active, setActive] = useState("education");
-  const iconSize = 50; // Centralized size control
+  const [active, setActive] = useState("education")
+  const iconSize = 50
 
   return (
     <div className="wrapper">
@@ -189,4 +193,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home

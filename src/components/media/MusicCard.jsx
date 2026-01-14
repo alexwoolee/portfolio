@@ -1,87 +1,91 @@
-import { useEffect, useRef, useState } from "react";
-import { Play, Pause, SkipForward, SkipBack } from 'lucide-react';
-import musicArray from "../../data/DataMusic";
-import styles from './media.module.css';
+/* React hooks */
+import { useEffect, useRef, useState } from "react"
+
+/* Third-party libraries */
+import { Play, Pause, SkipForward, SkipBack } from 'lucide-react'
+
+/* Data */
+import musicArray from "../../data/DataMusic"
+
+/* Styles */
+import styles from './media.module.css'
 
 const MusicCard = () => {
-  const audioRef = useRef(null);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [index, setIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null)
+  const [duration, setDuration] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [index, setIndex] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
 
-  const currentSong = musicArray[index];
+  const currentSong = musicArray[index]
 
   // 1. Handle Song Loading & Metadata
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = audioRef.current
     
     const handleLoadedMetadata = () => {
       if (audio) {
-        setDuration(audio.duration);
-        if (isPlaying) audio.play();
+        setDuration(audio.duration)
+        if (isPlaying) audio.play()
       }
-    };
+    }
 
     const handleTimeUpdate = () => {
-      if (audio) setCurrentTime(audio.currentTime);
-    };
+      if (audio) setCurrentTime(audio.currentTime)
+    }
 
     const handleEnded = () => {
-      nextSong();
-    };
+      nextSong()
+    }
 
     if (audio) {
-      audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.addEventListener("timeupdate", handleTimeUpdate);
-      audio.addEventListener("ended", handleEnded);
+      audio.addEventListener("loadedmetadata", handleLoadedMetadata)
+      audio.addEventListener("timeupdate", handleTimeUpdate)
+      audio.addEventListener("ended", handleEnded)
     }
 
     return () => {
       if (audio) {
-        audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        audio.removeEventListener("timeupdate", handleTimeUpdate);
-        audio.removeEventListener("ended", handleEnded);
+        audio.removeEventListener("loadedmetadata", handleLoadedMetadata)
+        audio.removeEventListener("timeupdate", handleTimeUpdate)
+        audio.removeEventListener("ended", handleEnded)
       }
-    };
-  }, [index, isPlaying]); // Re-bind if song changes
+    }
+  }, [index, isPlaying])
 
   // 2. Handle Play/Pause Toggles
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = audioRef.current
     if (audio) {
       if (isPlaying) {
-        // Promise handling prevents "play() request interrupted" errors
-        const playPromise = audio.play();
+        const playPromise = audio.play()
         if (playPromise !== undefined) {
-          playPromise.catch((error) => console.log("Playback error:", error));
+          playPromise.catch((error) => console.log("Playback error:", error))
         }
       } else {
-        audio.pause();
+        audio.pause()
       }
     }
-  }, [isPlaying, index]);
+  }, [isPlaying, index])
 
-  const togglePlay = () => setIsPlaying(!isPlaying);
+  const togglePlay = () => setIsPlaying(!isPlaying)
 
   const nextSong = () => {
-    setIndex((prev) => (prev + 1) % musicArray.length);
-    // Note: We don't set isPlaying(true) here because the useEffect 
-    // will handle auto-play if isPlaying is already true.
-  };
+    setIndex((prev) => (prev + 1) % musicArray.length)
+  }
 
   const prevSong = () => {
-    setIndex((prev) => (prev + musicArray.length - 1) % musicArray.length);
-  };
+    setIndex((prev) => (prev + musicArray.length - 1) % musicArray.length)
+  }
 
   const formatTime = (time) => {
-    if (isNaN(time)) return "0:00";
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${String(seconds).padStart(2, "0")}`;
-  };
+    if (isNaN(time)) return "0:00"
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+    return `${minutes}:${String(seconds).padStart(2, "0")}`
+  }
 
-  const progressPercent = duration ? (currentTime / duration) * 100 : 0;
+  const progressPercent = duration ? (currentTime / duration) * 100 : 0
 
   return (
     <div className={styles.musicCard}>
@@ -136,4 +140,4 @@ const MusicCard = () => {
   );
 };
 
-export default MusicCard;
+export default MusicCard

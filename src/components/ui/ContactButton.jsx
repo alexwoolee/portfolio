@@ -1,15 +1,21 @@
-import { useState } from "react";
-import ContactPopup from "./ContactPopup";
-// Importing icons from lucide-react
-import { Circle } from "lucide-react";
-import { ArrowDown } from "lucide-react";
-import styles from './ui.module.css';
+/* React hooks */
+import { useState } from "react"
+
+/* Third-party libraries */
+import { Circle } from "lucide-react"
+import { ArrowDown } from "lucide-react"
+
+/* Components */
+import ContactPopup from "./ContactPopup"
+
+/* Styles */
+import styles from './ui.module.css'
 
 const ContactButton = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false)
   const handleClick = () => {
-    setShowPopup(!showPopup);
-  };
+    setShowPopup(!showPopup)
+  }
 
   return (
     <>
@@ -34,4 +40,4 @@ const ContactButton = () => {
   );
 };
 
-export default ContactButton;
+export default ContactButton

@@ -1,30 +1,32 @@
-/* CSS file */
-import "./styles.css";
-/* Third-party imports / Framework imports */
-import { useParams } from "react-router"
-import AOS from "aos";
-import "aos/dist/aos.css";
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css'; 
-/* Components */
-import Layout from "./components/Layout/Layout.jsx";
-/* Pages */
-import About from "./components/AboutSection/About.jsx";
-import Projects from "./components/ProjectShowcase/Projects.jsx";
-import Home from "./components/HomeSection/Home.jsx"
-import Blog from "./components/BlogSection/Blog.jsx";
-import BlogPage from "./components/BlogSection/BlogPage.jsx"
+/* CSS files */
+import "./styles.css"
+import "aos/dist/aos.css"
+import 'simplebar-react/dist/simplebar.min.css'
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+/* React hooks */
+import { useEffect } from "react"
+
+/* Third-party libraries */
+import { useParams } from "react-router"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import AOS from "aos"
+import SimpleBar from 'simplebar-react'
+
+/* Components */
+import Layout from "./components/Layout/Layout.jsx"
+import Home from "./components/HomeSection/Home.jsx"
+import About from "./components/AboutSection/About.jsx"
+import Projects from "./components/ProjectShowcase/Projects.jsx"
+import Blog from "./components/BlogSection/Blog.jsx"
+import BlogPage from "./components/BlogSection/BlogPage.jsx"
 
 function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true
-    });
-  }, []);
+    })
+  }, [])
 
   let { id } = useParams()
 
@@ -43,7 +45,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

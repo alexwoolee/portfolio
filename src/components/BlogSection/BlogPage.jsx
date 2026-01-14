@@ -1,29 +1,29 @@
-import { useParams } from "react-router-dom";
-import Markdown from "react-markdown";
-import matter from "gray-matter";
-import styles from "./blog.module.css";
+/* Third-party libraries */
+import { useParams } from "react-router-dom"
+import Markdown from "react-markdown"
+import matter from "gray-matter"
+
+/* Styles */
+import styles from "./blog.module.css"
 
 const BlogPage = () => {
   // Grab the ID from the URL
-  const { id } = useParams();
-  // Use import.meta.glob to get the files
+  const { id } = useParams()
   const rawPostFiles = import.meta.glob("../../_posts/*.md", {
     query: "?raw",
     import: "default",
     eager: true,
-  });
+  })
 
-  const postPaths = Object.keys(rawPostFiles);
-
-  // Find the one file where the path matches the ID
-  const matchedPath = postPaths.find((path) => path.endsWith(`${id}.md`));
+  const postPaths = Object.keys(rawPostFiles)
+  const matchedPath = postPaths.find((path) => path.endsWith(`${id}.md`))
 
   if (!matchedPath) {
-    return <h1>Post not found!</h1>;
+    return <h1>Post not found!</h1>
   }
 
-  const rawString = rawPostFiles[matchedPath];
-  const post = matter(rawString);
+  const rawString = rawPostFiles[matchedPath]
+  const post = matter(rawString)
 
   return (
     <div className={styles.blogPage}>
@@ -42,4 +42,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default BlogPage

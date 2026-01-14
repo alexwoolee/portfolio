@@ -1,5 +1,8 @@
-import { Settings } from "lucide-react";
-import styles from "./layout.module.css";
+/* Third-party libraries */
+import { Settings } from "lucide-react"
+
+/* Styles */
+import styles from "./layout.module.css"
 
 const SettingsLink = ({ isOpen, onClick }) => {
   return (
@@ -16,4 +19,4 @@ const SettingsLink = ({ isOpen, onClick }) => {
   );
 };
 
-export default SettingsLink;
+export default SettingsLink

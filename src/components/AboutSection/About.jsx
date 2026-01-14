@@ -1,7 +1,10 @@
-import WinterLand from "./WinterLand";
-import ScrollGallery from "./ScrollGallery";
-import Footer from "../ui/Footer";
-import styles from './about.module.css';
+/* Components */
+import WinterLand from "./WinterLand"
+import ScrollGallery from "./ScrollGallery"
+import Footer from "../ui/Footer"
+
+/* Styles */
+import styles from './about.module.css'
 
 const About = () => {
   return (
@@ -83,4 +86,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About

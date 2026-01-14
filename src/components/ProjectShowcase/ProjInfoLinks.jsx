@@ -1,6 +1,11 @@
-import FIGMA from "../../assets/icons/figma-logo.svg";
-import styles from "./projects.module.css";
-import { ExternalLink } from 'lucide-react';
+/* Third-party libraries */
+import { ExternalLink } from 'lucide-react'
+
+/* Assets */
+import FIGMA from "../../assets/icons/figma-logo.svg"
+
+/* Styles */
+import styles from "./projects.module.css"
 
 const ProjInfoLinks = ({ project }) => {
   return (
@@ -35,4 +40,4 @@ const ProjInfoLinks = ({ project }) => {
   );
 };
 
-export default ProjInfoLinks;
+export default ProjInfoLinks

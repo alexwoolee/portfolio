@@ -1,5 +1,8 @@
-import ProjInfoLinks from "./ProjInfoLinks";
-import styles from './projects.module.css';
+/* Components */
+import ProjInfoLinks from "./ProjInfoLinks"
+
+/* Styles */
+import styles from './projects.module.css'
 
 const ProjectInfo = ({ project }) => {
   return (
@@ -19,4 +22,4 @@ const ProjectInfo = ({ project }) => {
   );
 };
 
-export default ProjectInfo;
+export default ProjectInfo

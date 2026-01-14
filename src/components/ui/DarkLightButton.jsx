@@ -1,10 +1,14 @@
-import { useState } from "react";
-// Importing icons from lucide-react
-import { Moon, Sun } from 'lucide-react';
-import styles from './ui.module.css';
+/* React hooks */
+import { useState } from "react"
+
+/* Third-party libraries */
+import { Moon, Sun } from 'lucide-react'
+
+/* Styles */
+import styles from './ui.module.css'
 
 const DarkLightButton = () => {
-  const [darkType, setDarkType] = useState(true);
+  const [darkType, setDarkType] = useState(true)
 
   return (
     <div 
@@ -16,4 +20,4 @@ const DarkLightButton = () => {
   );
 };
 
-export default DarkLightButton;
+export default DarkLightButton

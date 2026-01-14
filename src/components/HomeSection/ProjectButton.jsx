@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
-import { Circle, ArrowDown } from "lucide-react";
-import styles from "./home.module.css";
+/* Third-party libraries */
+import { Link } from "react-router-dom"
+import { Circle, ArrowDown } from "lucide-react"
+
+/* Styles */
+import styles from "./home.module.css"
 
 const ProjectButton = ({ path }) => {
   return (
@@ -19,4 +22,4 @@ const ProjectButton = ({ path }) => {
   );
 };
 
-export default ProjectButton;
+export default ProjectButton

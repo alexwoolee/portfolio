@@ -1,4 +1,5 @@
-import styles from "./home.module.css";
+/* Styles */
+import styles from "./home.module.css"
 
 const ExperienceCard = ({ img, title, period, company }) => {
   return (
@@ -22,4 +23,4 @@ const ExperienceCard = ({ img, title, period, company }) => {
   );
 };
 
-export default ExperienceCard;
+export default ExperienceCard

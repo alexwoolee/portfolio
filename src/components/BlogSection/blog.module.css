@@ -1,14 +1,10 @@
-/* ============================================
-   BLOG PAGE - MAIN CONTAINER
-   ============================================ */
+/* === BLOG PAGE - MAIN CONTAINER === */
 .content {
   background-color: var(--sand);
   padding: 4rem 4rem;
 }
 
-/* ============================================
-   BLOG LINK 
-   ============================================ */
+/* === BLOG LINK === */
 .blogLink {
   display: flex;
   flex-direction: row;
@@ -43,19 +39,12 @@
   border-radius: 0.2rem;
 }
 
-/* ============================================
-   BLOG PAGE 
-   ============================================ */
+/* === BLOG PAGE === */
 .blogPage {
   max-width: var(--reading-width);
-  
-  /* margin-block sets both Top and Bottom at once */
   margin-block: 5rem;
-  /* margin-inline sets both Left and Right (centering it) */
   margin-inline: auto;
-
   padding: 0 1.25rem;
-
   color: #292929;
 }
 
@@ -66,6 +55,10 @@
 .blogTitle {
   font-size: var(--text-xl);
   line-height: var(--lh-tight);
+}
+
+.blogDate {
+  /* Blog date styles */
 }
 
 .blogContent {

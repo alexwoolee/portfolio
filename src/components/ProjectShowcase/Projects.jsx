@@ -1,24 +1,29 @@
-import { useState } from "react";
-// Importing icons from lucide-react
-import { PanelRightOpen } from "lucide-react";
-// Importing components
-import ProjectCard from "./ProjectCard";
-import ProjectInfo from "./ProjectInfo";
-import GridRowToggle from "./GridRowToggle";
-import Footer from "../ui/Footer";
+/* React hooks */
+import { useState } from "react"
+
+/* Third-party libraries */
+import { PanelRightOpen } from "lucide-react"
+
+/* Components */
+import ProjectCard from "./ProjectCard"
+import ProjectInfo from "./ProjectInfo"
+import GridRowToggle from "./GridRowToggle"
+import Footer from "../ui/Footer"
+
 /* Data */
-import projects from "../../data/DataProjects";
+import projects from "../../data/DataProjects"
+
 /* Styles */
-import styles from "./projects.module.css";
+import styles from "./projects.module.css"
 
 const Projects = () => {
   // selectedProject is an obj that stores a component's prop, to access a prop => selectedProject.prop_example
-  const [selectedProject, setSelectedProject] = useState(projects[0]);
-  const [view, setView] = useState("grid");
+  const [selectedProject, setSelectedProject] = useState(projects[0])
+  const [view, setView] = useState("grid")
 
   const handleView = (view) => {
-    setView(view);
-  };
+    setView(view)
+  }
 
   return (
     <div className={styles.projectsPage}>
@@ -71,4 +76,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects

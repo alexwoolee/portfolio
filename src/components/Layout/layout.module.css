@@ -1,6 +1,4 @@
-/* ============================================
-   COLUMN CONTAINER
-   ============================================ */
+/* === COLUMN CONTAINER === */
 .column {
   display: flex;
   flex-direction: column;
@@ -33,9 +31,7 @@
   flex-direction: column;
 }
 
-/* ============================================
-   LINK LIST CONTAINER
-   ============================================ */
+/* === LINK LIST CONTAINER === */
 .linkListWrapper {
   display: flex;
   flex-direction: column;
@@ -44,9 +40,7 @@
   padding: 0.5rem;
 }
 
-/* ============================================
-   LINK LIST HEADER
-   ============================================ */
+/* === LINK LIST HEADER === */
 .linkListHeader {
   display: flex;
   justify-content: space-between;
@@ -63,9 +57,7 @@
   stroke-width: 3px;
 }
 
-/* ============================================
-   LINK ITEMS
-   ============================================ */
+/* === LINK ITEMS === */
 .link {
   display: flex;
   justify-content: flex-start;
@@ -120,6 +112,37 @@
 
 .linkTitle {
   font-weight: 500;
+}
+
+.linkListTitle {
+  font-weight: 500;
+}
+
+/* === CONTROLS === */
+.toggles {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.toggleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: none;
+}
+
+.activeBtn {
+  background-color: var(--murk) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
 }
 
 @media screen and (max-width: 800px) {

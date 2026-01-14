@@ -1,5 +1,8 @@
-import { Rows3, Grid2x2 } from "lucide-react";
-import styles from './projects.module.css';
+/* Third-party libraries */
+import { Rows3, Grid2x2 } from "lucide-react"
+
+/* Styles */
+import styles from './projects.module.css'
 
 const GridRowToggle = ({ view, onToggle}) => {
   return (
@@ -14,4 +17,4 @@ const GridRowToggle = ({ view, onToggle}) => {
   );
 };
 
-export default GridRowToggle;
+export default GridRowToggle

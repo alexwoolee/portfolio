@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+/* Third-party libraries */
+import { Link } from "react-router-dom"
 
 const Button = ({ path }) => {
   return (
@@ -8,5 +9,5 @@ const Button = ({ path }) => {
   );
 };
 
-export default Button;
+export default Button
 

@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom";
-import styles from "./blog.module.css";
+/* Third-party libraries */
+import { Link } from "react-router-dom"
+
+/* Styles */
+import styles from "./blog.module.css"
 
 const BlogLink = ({ id, title, date, cover }) => {
   return (
@@ -19,4 +22,4 @@ const BlogLink = ({ id, title, date, cover }) => {
   );
 };
 
-export default BlogLink;
+export default BlogLink

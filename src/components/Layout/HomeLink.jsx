@@ -1,5 +1,8 @@
-import { NavLink } from "react-router-dom";
-import styles from "./layout.module.css";
+/* Third-party libraries */
+import { NavLink } from "react-router-dom"
+
+/* Styles */
+import styles from "./layout.module.css"
 
 const HomeLink = ({ path, img, title }) => {
   return (
@@ -17,4 +20,4 @@ const HomeLink = ({ path, img, title }) => {
   );
 };
 
-export default HomeLink;
+export default HomeLink

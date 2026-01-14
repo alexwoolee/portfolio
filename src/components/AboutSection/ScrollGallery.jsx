@@ -1,15 +1,19 @@
-import { useRef } from "react";
-// Importing icons from lucide-react
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-// Importing gallery images
-import Osaka from "../../assets/gallery/osaka-night.png";
-import Gold from "../../assets/gallery/gold-gold-gold.png";
-import Bird from "../../assets/gallery/bird-pond.png";
+/* React hooks */
+import { useRef } from "react"
+
+/* Third-party libraries */
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+/* Assets */
+import Osaka from "../../assets/gallery/osaka-night.png"
+import Gold from "../../assets/gallery/gold-gold-gold.png"
+import Bird from "../../assets/gallery/bird-pond.png"
+
 /* Styles */
-import styles from './about.module.css';
+import styles from './about.module.css'
 
 const ScrollGallery = () => {
-  const galleryRef = useRef(null);
+  const galleryRef = useRef(null)
 
   const scrollLeft = () => {
     if (galleryRef.current) {
@@ -17,9 +21,9 @@ const ScrollGallery = () => {
         top: 0,
         left: -260,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   const scrollRight = () => {
     if (galleryRef.current) {
@@ -27,9 +31,9 @@ const ScrollGallery = () => {
         top: 0,
         left: 260,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   return (
     <div className={styles.galleryWrapper}>
@@ -62,4 +66,4 @@ const ScrollGallery = () => {
   );
 };
 
-export default ScrollGallery;
+export default ScrollGallery

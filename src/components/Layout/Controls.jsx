@@ -1,14 +1,19 @@
-import { useState } from "react";
-import DarkLightButton from "../ui/DarkLightButton.jsx";
-import { Volume, Volume1, Volume2, Snowflake, Umbrella } from 'lucide-react';
+/* React hooks */
+import { useState } from "react"
 
-import Snow from "../ui/Snow";
-import Raining from "../ui/Rain";
+/* Third-party libraries */
+import { Volume, Volume1, Volume2, Snowflake, Umbrella } from 'lucide-react'
+
+/* Components */
+import DarkLightButton from "../ui/DarkLightButton.jsx"
+import Snow from "../ui/Snow"
+import Raining from "../ui/Rain"
+
 /* Styles */
-import styles from './layout.module.css';
+import styles from './layout.module.css'
 
 const Controls = () => {
-  const [activeType, setActiveType] = useState("snow");
+  const [activeType, setActiveType] = useState("snow")
 
   return (
     <>
@@ -42,4 +47,4 @@ const Controls = () => {
   );
 };
 
-export default Controls;
+export default Controls

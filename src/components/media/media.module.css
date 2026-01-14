@@ -1,6 +1,4 @@
-/* ============================================
-   MUSIC CARD CONTAINER
-   ============================================ */
+/* === MUSIC CARD CONTAINER === */
 .musicCard {
   display: flex;
   flex-direction: column;
@@ -8,11 +6,10 @@
   bottom: 0;
   width: 100%;
   padding: 1rem;
-  background-color: var(--sand); /* Blends with sidebar */
-  border-top: 1px solid rgba(0,0,0,0.05); /* Subtle separator */
+  background-color: var(--sand);
+  border-top: 1px solid rgba(0,0,0,0.05);
   gap: 1rem;
 }
-
 
 @media screen and (max-width: 800px) {
   .musicCard {
@@ -20,9 +17,7 @@
   }
 }
 
-/* ============================================
-   MUSIC INFO & COVER
-   ============================================ */
+/* === MUSIC INFO & COVER === */
 .musicInfo {
   display: flex;
   align-items: center;
@@ -40,7 +35,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
-  overflow: hidden; /* Prevent text overflow */
+  overflow: hidden;
 }
 
 .musicTitle {
@@ -63,9 +58,7 @@
   text-overflow: ellipsis;
 }
 
-/* ============================================
-   MUSIC CONTROLS
-   ============================================ */
+/* === MUSIC CONTROLS === */
 .musicControls {
   display: flex;
   justify-content: center;
@@ -92,7 +85,6 @@
   background-color: rgba(0,0,0,0.05);
 }
 
-/* Special style for the Play/Pause button */
 .playBtn {
   width: 40px;
   height: 40px;
@@ -105,9 +97,7 @@
   color: white;
 }
 
-/* ============================================
-   PROGRESS BAR
-   ============================================ */
+/* === PROGRESS BAR === */
 .progressWrapper {
   display: flex;
   flex-direction: column;
@@ -130,7 +120,7 @@
   top: 0;
   left: 0;
   height: 4px;
-  background-color: rgb(255, 128, 0); /* Orange fill */
+  background-color: rgb(255, 128, 0);
   transition: width 0.1s linear;
   border-radius: 4px;
 }
@@ -144,5 +134,5 @@
 .progressTimes span {
   font-size: 0.75rem;
   color: grey;
-  font-variant-numeric: tabular-nums; /* Prevents jitter when numbers change */
+  font-variant-numeric: tabular-nums;
 }

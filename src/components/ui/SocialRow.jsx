@@ -1,15 +1,18 @@
-import { Copy } from 'lucide-react';
-import styles from './ui.module.css';
+/* Third-party libraries */
+import { Copy } from 'lucide-react'
+
+/* Styles */
+import styles from './ui.module.css'
 
 const SocialRow = ({ icon, content }) => {
   const renderIcon = () => {
-    if (!icon) return null;
+    if (!icon) return null
     if (typeof icon === "string") {
-      return <img src={icon} alt="social icon" className={styles.popupSocialIcon}></img>;
+      return <img src={icon} alt="social icon" className={styles.popupSocialIcon}></img>
     }
-    const Icon = icon;
+    const Icon = icon
     return <Icon />
-  };
+  }
   return (
     <span className={styles.socialRow}>
       {renderIcon()}
@@ -21,4 +24,4 @@ const SocialRow = ({ icon, content }) => {
   );
 };
 
-export default SocialRow;
+export default SocialRow

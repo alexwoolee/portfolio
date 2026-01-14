@@ -1,24 +1,18 @@
-/* ============================================
-   ABOUT PAGE - MAIN CONTAINER
-   ============================================ */
+/* === ABOUT PAGE - MAIN CONTAINER === */
 .content {
   background-color: var(--sand);
   height: 100%;
   padding: 4rem 4rem;
 }
 
-/* ============================================
-   ABOUT PAGE - TITLES
-   ============================================ */
+/* === ABOUT PAGE - TITLES === */
 .title {
   font-size: 50px;
   text-align: left;
   font-weight: 600;
 }
 
-/* ============================================
-   ABOUT PAGE - BIO SECTION
-   ============================================ */
+/* === ABOUT PAGE - BIO SECTION === */
 .bio {
   margin: 0 0 2rem 0;
 }
@@ -29,9 +23,7 @@
   margin: 0 auto;
 }
 
-/* ============================================
-   GALLERY COMPONENT
-   ============================================ */
+/* === GALLERY COMPONENT === */
 .galleryWrapper {
   display: flex;
   justify-content: center;
@@ -47,12 +39,11 @@
   max-width: 1200px;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  /* Hide scrollbar for cleaner look if desired */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .galleryCtn::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
 .galleryPic {
@@ -61,7 +52,6 @@
   object-fit: cover;
   border-radius: 0.25rem;
   flex-shrink: 0;
-  /* Optional: Add a subtle hover effect */
   transition: transform 0.3s ease;
 }
 
@@ -76,14 +66,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer; /* Added for better UX */
+  cursor: pointer;
 }
 
 .chevron:hover {
   transform: scale(1.1);
 }
 
-/* Specific padding adjustments for visual centering of icons */
 .chevronLeft {
   padding: 0.5rem 0.5rem 0.5rem 0.4rem;
 }

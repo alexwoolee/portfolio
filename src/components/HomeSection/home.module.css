@@ -1,6 +1,4 @@
-/* ============================================
-   ABOUT PAGE - MAIN CONTAINER
-   ============================================ */
+/* === HOME PAGE - MAIN CONTAINER === */
 .content {
   background-color: var(--sand);
   height: 100%;
@@ -19,9 +17,7 @@
   flex-direction: column;
 }
 
-/* ============================================
-   ABOUT PAGE - TITLES
-   ============================================ */
+/* === HOME PAGE - HEADER === */
 .title {
   font-size: 50px;
   text-align: left;
@@ -38,9 +34,13 @@
   color: #818182;
 }
 
-/* ============================================
-   ABOUT PAGE - BIO SECTION
-   ============================================ */
+.profile {
+  /* Profile image styles */
+}
+
+.bio {
+  /* Bio text styles */
+}
 
 .bioCtn {
   max-width: 700px;
@@ -49,9 +49,7 @@
   padding: 0 2.5rem;
 }
 
-/* ============================================
-   ABOUT PAGE - SKILLS & LANGUAGES
-   ============================================ */
+/* === SKILLS & LANGUAGES === */
 .progLanguages {
   display: flex;
   flex-wrap: wrap;
@@ -97,9 +95,7 @@
   flex-shrink: 0;
 }
 
-/* ============================================
-   ABOUT PAGE - LOGO SLIDING ANIMATION
-   ============================================ */
+/* === LOGO SLIDING ANIMATION === */
 .logoSliding {
   white-space: nowrap;
   overflow: hidden;
@@ -157,9 +153,7 @@
   flex-shrink: 0;
 }
 
-/* ============================================
-   ABOUT PAGE - BUTTONS
-   ============================================ */
+/* === BUTTONS === */
 .projectButtonWrapper {
   background-color: white;
   color: black;
@@ -210,51 +204,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2; /* Sits above the black slide */
+  z-index: 2;
 }
 
-/* 1. The Small Circle (Default: Black Dot) */
 .iconSmallCircle {
   position: absolute;
   opacity: 1;
   transform: scale(1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 1; /* Sit behind the arrow */
+  z-index: 1;
 }
 
-/* 2. The Arrow (Default: Hidden, Black) */
 .iconArrowDown {
   position: absolute;
   opacity: 0;
   transform: scale(0.5) rotate(-45deg);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  stroke: black; /* Always Black */
-  z-index: 2; /* Sit on top of the circle */
+  stroke: black;
+  z-index: 2;
   stroke-width: 3px;
 }
 
-/* --- HOVER ACTIONS --- */
-
-/* Circle: Expands and turns WHITE */
 .projectButtonWrapper:hover .iconSmallCircle {
-  opacity: 1; /* Stay visible */
-  transform: scale(2); /* Grow to become the background */
-  fill: white; /* Turn white */
-  stroke: white; /* Ensure edges are white too */
+  opacity: 1;
+  transform: scale(2);
+  fill: white;
+  stroke: white;
   transition: all 0.4s ease;
 }
 
-/* Arrow: Appears and stays BLACK */
 .projectButtonWrapper:hover .iconArrowDown {
   opacity: 1;
-  transform: scale(0.8) rotate(0deg); /* Slightly smaller to fit inside the white circle */
+  transform: scale(0.8) rotate(0deg);
 }
 
-/* ============================================
-   SPECIFIC COLOR TARGETING (Goal 1 & 2)
-   ============================================ */
-
-/* Default Arrow Colors (Hidden, but good to set) */
 .iconArrowDown svg circle {
   fill: transparent;
   stroke: none;
@@ -265,9 +248,6 @@
   transition: stroke 0.4s ease;
 }
 
-/* HOVER COLORS */
-
-/* Target the SVG Arrow Lines -> BLACK */
 .projectButtonWrapper:hover .iconArrowDown {
   opacity: 1;
   stroke: black;
@@ -275,16 +255,14 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 }
 
-/* ======================================ico======
-   ABOUT PAGE - EXPERIENCE SECTION
-   ============================================ */
+/* === EXPERIENCE SECTION === */
 .expCtn {
   margin: 3rem auto;
 }
 
-.expType {
+/* .expType {
   margin-bottom: 1rem;
-}
+} */
 
 .exp {
   display: flex;
@@ -316,13 +294,17 @@
   margin: 0;
 }
 
+.company {
+  /* Company name styles */
+}
+
 .expPeriod {
   color: grey;
 }
 
-.expDesc {
+/* .expDesc {
   font-weight: 100;
-}
+} */
 
 .divider {
   width: 100%;
@@ -331,17 +313,12 @@
   margin-bottom: 3rem;
 }
 
-/* ============================================
-   COMPACT EDUCATION COMPONENT
-   ============================================ */
-
-/* Main Wrapper */
+/* === EDUCATION COMPONENT === */
 .eduCompactContainer {
-  padding: 2rem; /* Reduced from 4rem */
+  padding: 2rem;
   background-color: var(--sand);
 }
 
-/* 1. Header Section (Flex Row instead of Column) */
 .uniHeader {
   display: flex;
   align-items: center;
@@ -350,7 +327,7 @@
 }
 
 .uniLogoCompact {
-  width: 80px; /* Reduced from w-48 (approx 192px) */
+  width: 80px;
   height: auto;
   border-radius: 0.5rem;
 }
@@ -367,7 +344,6 @@
   font-size: 0.95rem;
 }
 
-/* Divider */
 .compactDivider {
   border: 0;
   height: 1px;
@@ -375,7 +351,6 @@
   margin: 1.5rem 0;
 }
 
-/* 2. Course Grid Section */
 .compactSectionTitle {
   font-size: 1.1rem;
   text-transform: uppercase;
@@ -386,7 +361,6 @@
 
 .courseGrid {
   display: grid;
-  /* Creates 2 columns automatically, switches to 1 on mobile */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem 2rem;
 }
@@ -418,7 +392,6 @@
   line-height: 1.4;
 }
 
-/* Custom bullet point to save space vs default <ul> */
 .compactList li::before {
   content: "•";
   position: absolute;
@@ -426,18 +399,16 @@
   color: #818182;
 }
 
-/* ============================================
-   SEGMENTED TOGGLE CONTROL
-   ============================================ */
+/* === TOGGLE CONTROL === */
 .toggleContainer {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.05); /* Subtle gray track */
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 0.3rem;
   border-radius: 0.75rem;
   gap: 0.5rem;
   width: 100%;
-  max-width: 400px; /* Keeps buttons from looking too stretched */
-  margin: 0 auto 2rem auto; /* Center it and add space below */
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
 }
 
 .toggleBtn {
@@ -449,7 +420,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   background-color: transparent;
-  color: #818182; /* Grey text for inactive */
+  color: #818182;
 }
 
 .toggleBtn:hover {
@@ -457,7 +428,6 @@
   color: black;
 }
 
-/* Active State */
 .activeBtn {
   background-color: var(--murk) !important;
   color: white !important;
@@ -465,9 +435,7 @@
   transform: scale(1.02);
 }
 
-/* ============================================
-   CONTACT ME 
-   ============================================ */
+/* === CONTACT ME === */
 .contactCtn {
   padding: 2rem;
   box-sizing: border-box;
@@ -487,9 +455,9 @@
   .contactCtn {
     flex-direction: column;
   }
-  .contactTxt {
+  /* .contactTxt {
     width: 100%;
-  }
+  } */
 }
 
 .contactText {

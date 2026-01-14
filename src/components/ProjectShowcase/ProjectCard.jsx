@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom";
-import styles from "./projects.module.css"; // Make sure path is correct
+/* Third-party libraries */
+import { Link } from "react-router-dom"
+
+/* Styles */
+import styles from "./projects.module.css"
 
 const ProjectCard = ({ project, onSelect }) => {
   return (
@@ -22,4 +25,4 @@ const ProjectCard = ({ project, onSelect }) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectCard

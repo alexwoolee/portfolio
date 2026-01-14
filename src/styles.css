@@ -1,6 +1,4 @@
-/* ============================================
-   FONT IMPORTS
-   ============================================ */
+/* === FONT IMPORTS === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
@@ -12,38 +10,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import "tailwindcss";
 
-/* ============================================
-   CSS VARIABLES
-   ============================================ */
+/* === CSS VARIABLES === */
 :root {
   --reading-width: 70ch;
   /* --- TYPOGRAPHY SCALE --- */
-  --base-size: 1.25rem; /* 20px: The core body text size */
-  
-  /* The Ratio: We multiply the base by 1.25 to get the next size up. 
-     This ensures that the "gap" between a title and a subtitle 
-     always feels mathematically 'correct' to the human eye.
-  */
-  --text-sm: 0.95rem;     /* Date/Meta: Small enough to not distract */
-  --text-base: 1.25rem;   /* Body: Large for comfort */
-  --text-md: 1.5rem;      /* H3: Just slightly larger than body */
-  --text-lg: 2rem;        /* H2: Section headers */
-  --text-xl: 2.625rem;    /* H1: The main article title */
-
-  /* --- LINE HEIGHTS --- */
-  /* Rule of thumb: The larger the text, the smaller the line-height.
-     Titles need to be "tight" so they look like one unit. 
-     Body text needs "air" so your eye doesn't get lost between lines.
-  */
-  --lh-tight: 1.15;       /* For H1, H2 */
-  --lh-medium: 1.25;      /* For H3 */
-  --lh-relaxed: 1.6;      /* For Body text (Medium's sweet spot) */
-
-  /* --- MEDIUM COLORS --- */
-  /* Medium uses very specific grays to create "Visual Hierarchy" */
-  --color-text-main: #242424;    /* Almost black, but softer on the eyes */
-  --color-text-muted: #6b6b6b;   /* Grey: Used for dates and secondary info */
-  --color-border: #f2f2f2;       /* Very light grey for the <hr /> lines */
+  --base-size: 1.25rem;
+  --text-sm: 0.95rem;
+  --text-base: 1.25rem;
+  --text-md: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: 2.625rem;
+  --lh-tight: 1.15;
+  --lh-medium: 1.25;
+  --lh-relaxed: 1.6;
+  --color-text-main: #242424;
+  --color-text-muted: #6b6b6b;
+  --color-border: #f2f2f2;
 
   /* Font Families */
   --framer-font-family: "Fredoka", "Inter", sans-serif;
@@ -84,9 +66,7 @@
   --warm-ocean: #19E8E2;
 }
 
-/* ============================================
-   BASE HTML ELEMENTS
-   ============================================ */
+/* === BASE HTML ELEMENTS === */
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -105,7 +85,12 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--framer-font-family-bold);
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -113,9 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.5em 0;
 }
 
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
+/* === TYPOGRAPHY === */
 strong {
   font-family: var(--framer-font-family-bold);
   font-weight: 700;
@@ -135,26 +118,24 @@ a:hover {
   color: var(--color-indigo);
 }
 
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-.text-muted {
+/* === UTILITY CLASSES === */
+/* .text-muted {
   color: var(--white-transparent);
-}
+} */
 
 .text-center {
   text-align: center;
 }
 
-.uppercase {
+/* .uppercase {
   text-transform: uppercase;
-}
+} */
 
-.letter-spaced {
+/* .letter-spaced {
   letter-spacing: 0.05em;
-}
+} */
 
-.hero {
+/* .hero {
   font-family: "Funnel Display", "M PLUS Rounded 1c", sans-serif;
   font-weight: 700;
   font-size: 4rem;
@@ -163,15 +144,12 @@ a:hover {
   color: var(--color-accent);
   text-align: center;
   margin: 2rem 0;
-}
+} */
 
-/* ============================================
-   MAIN LAYOUT
-   ============================================ */
+/* === MAIN LAYOUT === */
 #main {
   display: flex;
   justify-content: space-between;
-  /* margin: 1rem; */
   background-color: transparent;
 }
 
@@ -181,19 +159,17 @@ a:hover {
   overflow: hidden;
 }
 
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px) {
   #content-display {
     padding-left: 4rem;
   }
 }
 
-/* ============================================
-   LAYOUT CONTAINERS
-   ============================================ */
+/* === LAYOUT CONTAINERS === */
 .wrapper {
   background-color: var(--sand);
   overflow: scroll;
-  overflow: overlay;  
+  overflow: overlay;
   overflow-x: hidden;
   height: 100dvh;
 }
@@ -212,9 +188,7 @@ a:hover {
   overflow-y: auto;
 }
 
-/* ============================================
-   SCROLLBAR STYLES
-   ============================================ */
+/* === SCROLLBAR STYLES === */
 ::-webkit-scrollbar {
   width: 10px;
   border-radius: 1rem;
@@ -225,7 +199,6 @@ a:hover {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0;
-   scrollbar-width: none; 
 }
 
 .page-container::-webkit-scrollbar {
@@ -261,13 +234,11 @@ a:hover {
   border-radius: 0;
 }
 
-/* ============================================
-   TYPOGRAPHY UTILITY CLASSES
-   ============================================ */
-.title-xl {
+/* === TYPOGRAPHY UTILITY CLASSES === */
+/* .title-xl {
   font-size: 2.5rem;
   font-weight: 600;
-}
+} */
 
 .title-lg {
   font-size: 2rem;
@@ -284,32 +255,30 @@ a:hover {
   font-weight: 500;
 }
 
-.text-sm {
+/* .text-sm {
   font-size: 0.9rem;
-}
+} */
 
-.text-xs {
+/* .text-xs {
   font-size: 0.8rem;
-}
+} */
 
-.text-xxs {
+/* .text-xxs {
   font-size: 0.75rem;
-}
+} */
 
-/* ============================================
-   COOL BUTTONS 
-   ============================================ */
-.btn-border-reveal { 
+/* === BUTTONS === */
+.btn-border-reveal {
   background-color: white;
   color: black;
-  position: relative; 
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
   border-radius: 0.75rem;
   height: 3rem;
-  box-shadow: 
+  box-shadow:
     0 0.2rem 0.5rem rgba(255, 255, 255, 0.15),
     0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
   outline: none;
