@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 // Importing icons from lucide-react
 import { CloudRain, CloudHail, LoaderPinwheel } from 'lucide-react';
 // Importing weather gif
-import RainGif from "../../assets/gifs/rain.gif";
+/* Assets */
+import RainGif from "@/assets/gifs/rain.gif"
 /* Styles */
 import styles from './layout.module.css';
 

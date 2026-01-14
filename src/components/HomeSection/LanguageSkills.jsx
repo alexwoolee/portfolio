@@ -13,7 +13,7 @@ import {
   SQL,
   Tailwindcss,
   TypeScript,
-} from "../icons/icon.js";
+} from "@/components/icons/icon.js"
 import SkillIconWrapper from "./SkillIconWrapper.jsx";
 import styles from "./home.module.css";
 

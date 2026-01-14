@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
+import path from 'path' // Node.js built-in path module
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,6 +20,12 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      // Tell Vite: "Whenever you see '@' look in src"
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   assetsInclude: ["**/*.glb"],
   optimizeDeps: {
     esbuildOptions: {

@@ -1,5 +1,8 @@
-import SFU from "../../assets/education/SFU.png";
-import styles from './home.module.css';
+/* Assets */
+import SFU from "@/assets/education/SFU.png"
+
+/* Styles */
+import styles from './home.module.css'
 
 const Education = () => {
   // Define courses data to make the JSX cleaner and easier to map in a grid
@@ -28,7 +31,7 @@ const Education = () => {
 
   return (
     <div className={styles.eduCompactContainer}>
-      {/* 1. Header: Logo + Info side-by-side */}
+      {/* Header: Logo + Info side-by-side */}
       <div className={styles.uniHeader}>
         <img src={SFU} className={styles.uniLogoCompact} alt="SFU Logo" />
         <div className={styles.uniInfo}>
@@ -40,7 +43,7 @@ const Education = () => {
 
       <hr className={styles.compactDivider} />
 
-      {/* 2. Courses: 2-Column Grid */}
+      {/* Courses: 2-Column Grid */}
       <h3 className={styles.compactSectionTitle}>Specialized Coursework</h3>
       
       <div className={styles.courseGrid}>

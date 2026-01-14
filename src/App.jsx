@@ -13,12 +13,12 @@ import AOS from "aos"
 import SimpleBar from 'simplebar-react'
 
 /* Components */
-import Layout from "./components/Layout/Layout.jsx"
-import Home from "./components/HomeSection/Home.jsx"
-import About from "./components/AboutSection/About.jsx"
-import Projects from "./components/ProjectShowcase/Projects.jsx"
-import Blog from "./components/BlogSection/Blog.jsx"
-import BlogPage from "./components/BlogSection/BlogPage.jsx"
+import Layout from "@/components/Layout/Layout.jsx"
+import Home from "@/components/HomeSection/Home.jsx"
+import About from "@/components/AboutSection/About.jsx"
+import Projects from "@/components/ProjectShowcase/Projects.jsx"
+import Blog from "@/components/BlogSection/Blog.jsx"
+import BlogPage from "@/components/BlogSection/BlogPage.jsx"
 
 function App() {
   useEffect(() => {

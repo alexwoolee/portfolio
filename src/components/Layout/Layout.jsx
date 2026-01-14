@@ -8,14 +8,14 @@ import { Outlet } from "react-router-dom"
 import HomeLink from "./HomeLink"
 import SettingsLink from "./SettingsLink"
 import WeatherTime from "./WeatherTime"
-import MusicCard from "../media/MusicCard"
+import MusicCard from "@/components/media/MusicCard"
 import Controls from "./Controls"
 
 /* Assets */
-import homeImg from "../../assets/sidebar/rain.png"
-import aboutImg from "../../assets/sidebar/together.png"
-import projImg from "../../assets/sidebar/proud.png"
-import blogImg from "../../assets/sidebar/beauty.png"
+import homeImg from "@/assets/sidebar/rain.png"
+import aboutImg from "@/assets/sidebar/together.png"
+import projImg from "@/assets/sidebar/proud.png"
+import blogImg from "@/assets/sidebar/beauty.png"
 
 /* Icons */
 import { PanelLeft } from "lucide-react"

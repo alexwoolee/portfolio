@@ -3,7 +3,7 @@ import matter from "gray-matter"
 
 /* Components */
 import BlogLink from "./BlogLink.jsx"
-import Footer from "../ui/Footer.jsx"
+import Footer from "@/components/ui/Footer.jsx"
 
 /* Styles */
 import styles from "./blog.module.css"
@@ -11,7 +11,7 @@ import styles from "./blog.module.css"
 const Blog = () => {
   // Imports all .md files as raw text strings (including frontmatter).
   // Result: { filePath: "entire markdown file as a string", ... }
-  const rawPostFiles = import.meta.glob("../../_posts/*.md", {
+  const rawPostFiles = import.meta.glob("@/_posts/*.md", {
     query: "?raw",
     import: "default",
     eager: true,

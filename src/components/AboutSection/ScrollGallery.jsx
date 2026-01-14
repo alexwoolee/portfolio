@@ -5,9 +5,9 @@ import { useRef } from "react"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 /* Assets */
-import Osaka from "../../assets/gallery/osaka-night.png"
-import Gold from "../../assets/gallery/gold-gold-gold.png"
-import Bird from "../../assets/gallery/bird-pond.png"
+import Osaka from "@/assets/gallery/osaka-night.png"
+import Gold from "@/assets/gallery/gold-gold-gold.png"
+import Bird from "@/assets/gallery/bird-pond.png"
 
 /* Styles */
 import styles from './about.module.css'

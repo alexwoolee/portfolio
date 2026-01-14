@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { Play, Pause, SkipForward, SkipBack } from 'lucide-react'
 
 /* Data */
-import musicArray from "../../data/DataMusic"
+import musicArray from "@/data/DataMusic"
 
 /* Styles */
 import styles from './media.module.css'

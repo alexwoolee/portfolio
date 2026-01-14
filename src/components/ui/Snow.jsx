@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
-import Snowflake from "../../assets/sprites/snowflake.png";
+/* Assets */
+import Snowflake from "@/assets/sprites/snowflake.png"
 
 const Snow = () => {
   // Number of snowflakes we want on the screen

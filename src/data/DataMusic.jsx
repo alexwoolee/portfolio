@@ -1,16 +1,15 @@
-// Importing cover image
-import christmasCover from "../assets/covers/christmas-cover.jpg"
-// Importing audio files
-import allIWantAudio from "../assets/audio/All I Want for Christmas is You.mp3"
-import awayInAMangerAudio from "../assets/audio/Away in a Manger.mp3"
-import hereWeComeAudio from "../assets/audio/Here We Come A-Wassailing.mp3"
-import jingleBellsAudio from "../assets/audio/Jingle Bells.mp3"
-import lastChristmasAudio from "../assets/audio/Last Christmas.mp3"
-import santaClausAudio from "../assets/audio/Santa Claus is Coming to Town.mp3"
-import sleighRideAudio from "../assets/audio/Sleigh Ride.mp3"
-import thisChristmasAudio from "../assets/audio/This Christmas.mp3"
-import upOnHousetopAudio from "../assets/audio/Up on the Housetop.mp3"
-import weWishYouAudio from "../assets/audio/We Wish You a Merry Christmas.mp3"
+/* Assets */
+import christmasCover from "@/assets/covers/christmas-cover.jpg"
+import allIWantAudio from "@/assets/audio/All I Want for Christmas is You.mp3"
+import awayInAMangerAudio from "@/assets/audio/Away in a Manger.mp3"
+import hereWeComeAudio from "@/assets/audio/Here We Come A-Wassailing.mp3"
+import jingleBellsAudio from "@/assets/audio/Jingle Bells.mp3"
+import lastChristmasAudio from "@/assets/audio/Last Christmas.mp3"
+import santaClausAudio from "@/assets/audio/Santa Claus is Coming to Town.mp3"
+import sleighRideAudio from "@/assets/audio/Sleigh Ride.mp3"
+import thisChristmasAudio from "@/assets/audio/This Christmas.mp3"
+import upOnHousetopAudio from "@/assets/audio/Up on the Housetop.mp3"
+import weWishYouAudio from "@/assets/audio/We Wish You a Merry Christmas.mp3"
 
 const music = [
   {

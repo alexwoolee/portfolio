@@ -9,7 +9,7 @@ import styles from "./blog.module.css"
 const BlogPage = () => {
   // Grab the ID from the URL
   const { id } = useParams()
-  const rawPostFiles = import.meta.glob("../../_posts/*.md", {
+  const rawPostFiles = import.meta.glob("@/_posts/*.md", {
     query: "?raw",
     import: "default",
     eager: true,

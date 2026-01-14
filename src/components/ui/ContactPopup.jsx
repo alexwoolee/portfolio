@@ -3,13 +3,13 @@ import { useState } from "react"
 
 /* Components */
 import SocialRow from "./SocialRow"
-import Mail from "../icons/actions/Mail"
+import Mail from "@/components/icons/actions/Mail"
 
 /* Assets */
-import GitHub from "../../assets/icons/github.svg"
-import LinkedIn from "../../assets/icons/linkedin.png"
-import Discord from "../../assets/icons/discord.svg"
-import TikTok from "../../assets/icons/tiktok.svg"
+import GitHub from "@/assets/icons/github.svg"
+import LinkedIn from "@/assets/icons/linkedin.png"
+import Discord from "@/assets/icons/discord.svg"
+import TikTok from "@/assets/icons/tiktok.svg"
 
 /* Styles */
 import styles from './ui.module.css'

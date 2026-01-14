@@ -5,9 +5,9 @@ import { useState } from "react"
 import { Volume, Volume1, Volume2, Snowflake, Umbrella } from 'lucide-react'
 
 /* Components */
-import DarkLightButton from "../ui/DarkLightButton.jsx"
-import Snow from "../ui/Snow"
-import Raining from "../ui/Rain"
+import DarkLightButton from "@/components/ui/DarkLightButton.jsx"
+import Snow from "@/components/ui/Snow"
+import Raining from "@/components/ui/Rain"
 
 /* Styles */
 import styles from './layout.module.css'

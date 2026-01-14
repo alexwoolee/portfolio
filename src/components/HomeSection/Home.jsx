@@ -19,19 +19,19 @@ import LanguageSkills from "./LanguageSkills.jsx"
 import GeneralSkills from "./GeneralSkills.jsx"
 import ExperienceCard from "./ExperienceCard.jsx"
 import ProjectButton from "./ProjectButton.jsx"
-import Button from "../ui/Button.jsx"
+import Button from "@/components/ui/Button.jsx"
 import Education from "./Education.jsx"
 import ContactMe from "./ContactMe.jsx"
-import Footer from "../ui/Footer.jsx"
+import Footer from "@/components/ui/Footer.jsx"
 
 /* Assets */
-import PFP from "../../assets/gifs/doggiecorgi_swim.gif"
-import HMART from "../../assets/experience/HMART.jpeg"
-import MOCC from "../../assets/experience/MOCC.png"
-import SFU from "../../assets/experience/SFU.png"
+import PFP from "@/assets/gifs/doggiecorgi_swim.gif"
+import HMART from "@/assets/experience/HMART.jpeg"
+import MOCC from "@/assets/experience/MOCC.png"
+import SFU from "@/assets/experience/SFU.png"
 
 /* Icons */
-import { C } from "../icons/icon"
+import { C } from "@/components/icons/icon"
 
 /* Styles */
 import styles from "./home.module.css"
