@@ -1,19 +1,19 @@
 import { NavLink } from "react-router-dom";
-import styles from './layout.module.css';
+import styles from "./layout.module.css";
 
-const HomeLink = ({ path, img, title, info }) => {
+const HomeLink = ({ path, img, title }) => {
   return (
-    <div>
-      <NavLink 
-        to={path}
-        className={({ isActive }) => `${styles.link} ${isActive ? styles.activeLink : ""}`}
-      >
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        `${styles.link} ${isActive ? styles.activeLink : ""}`
+      }
+    >
+      <div className={styles.iconWrapper}>
         <img src={img} alt={path} className={styles.linkImg}></img>
-        <div>
-          <p className={`${styles.linkTitle} title-sm block`}>{title}</p>
-        </div>
-      </NavLink>
-    </div>
+      </div>
+      <p className={`${styles.linkTitle} title-sm block`}>{title}</p>
+    </NavLink>
   );
 };
 

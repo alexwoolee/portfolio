@@ -41,6 +41,7 @@ const Blog = () => {
             id={postObj.id}
             title={postObj.data.title}
             date={postObj.data.date}
+            cover={postObj.data.cover}
           />
         )
       })}

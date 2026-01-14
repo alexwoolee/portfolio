@@ -1,15 +1,17 @@
 import { Settings } from "lucide-react";
-import styles from './layout.module.css';
+import styles from "./layout.module.css";
 
-const SettingsLink = () => {
+const SettingsLink = ({ isOpen, onClick }) => {
   return (
-    <button className={styles.link} type="button">
-      <Settings size={20} />
-      <div>
-        <p className={`${styles.linkTitle} title-sm lg:block hidden`}>
-          Settings
-        </p>
+    <button
+      className={`${styles.link} ${isOpen ? styles.activeLink : ""}`}
+      type="button"
+      onClick={onClick}
+    >
+      <div className={styles.iconWrapper}>
+        <Settings size={20} />
       </div>
+      <p className={`${styles.linkTitle} title-sm block`}>Settings</p>
     </button>
   );
 };

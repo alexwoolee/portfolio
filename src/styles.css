@@ -16,6 +16,35 @@
    CSS VARIABLES
    ============================================ */
 :root {
+  --reading-width: 70ch;
+  /* --- TYPOGRAPHY SCALE --- */
+  --base-size: 1.25rem; /* 20px: The core body text size */
+  
+  /* The Ratio: We multiply the base by 1.25 to get the next size up. 
+     This ensures that the "gap" between a title and a subtitle 
+     always feels mathematically 'correct' to the human eye.
+  */
+  --text-sm: 0.95rem;     /* Date/Meta: Small enough to not distract */
+  --text-base: 1.25rem;   /* Body: Large for comfort */
+  --text-md: 1.5rem;      /* H3: Just slightly larger than body */
+  --text-lg: 2rem;        /* H2: Section headers */
+  --text-xl: 2.625rem;    /* H1: The main article title */
+
+  /* --- LINE HEIGHTS --- */
+  /* Rule of thumb: The larger the text, the smaller the line-height.
+     Titles need to be "tight" so they look like one unit. 
+     Body text needs "air" so your eye doesn't get lost between lines.
+  */
+  --lh-tight: 1.15;       /* For H1, H2 */
+  --lh-medium: 1.25;      /* For H3 */
+  --lh-relaxed: 1.6;      /* For Body text (Medium's sweet spot) */
+
+  /* --- MEDIUM COLORS --- */
+  /* Medium uses very specific grays to create "Visual Hierarchy" */
+  --color-text-main: #242424;    /* Almost black, but softer on the eyes */
+  --color-text-muted: #6b6b6b;   /* Grey: Used for dates and secondary info */
+  --color-border: #f2f2f2;       /* Very light grey for the <hr /> lines */
+
   /* Font Families */
   --framer-font-family: "Fredoka", "Inter", sans-serif;
   --framer-font-family-bold: "Fredoka", sans-serif;
@@ -150,6 +179,12 @@ a:hover {
   flex: 1 1 auto;
   width: 100%;
   overflow: hidden;
+}
+
+@media screen and (max-width: 800px) { 
+  #content-display {
+    padding-left: 4rem;
+  }
 }
 
 /* ============================================

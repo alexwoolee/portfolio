@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import matter from "gray-matter";
+import styles from "./blog.module.css";
 
 const BlogPage = () => {
   // Grab the ID from the URL
@@ -25,15 +26,18 @@ const BlogPage = () => {
   const post = matter(rawString);
 
   return (
-    <div>
+    <div className={styles.blogPage}>
       {/* Standard HTML for the frontmatter */}
-      <h1>{post.data.title}</h1>
-      {/* <p>{post.data.date}</p> */}
+      <img className={styles.blogCover} src={post.data.cover} alt="Image cover" />
+      <h1 className={styles.blogTitle}>{post.data.title}</h1>
+      { post.data.date && <p className={styles.blogDate}>{post.data.date.toString()}</p> }
 
-      <hr />
+      {/* <hr /> */}
 
       {/* Markdown translator for the body text */}
-      <Markdown>{post.content}</Markdown>
+      <div className={styles.blogContent}>
+        <Markdown>{post.content}</Markdown>
+      </div>
     </div>
   );
 };

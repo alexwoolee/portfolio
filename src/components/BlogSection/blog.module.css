@@ -13,10 +13,15 @@
   display: flex;
   flex-direction: row;
   background: linear-gradient(135deg, var(--sand) 0%, #e6dfd8 100%);
-  border: 1px solid var(--border-gray);
+  border: 2px solid var(--border-gray);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.blogLink:hover {
+  border: 2px solid yellow;
 }
 
 .linkTitle {
@@ -36,4 +41,42 @@
   height: 140px;
   margin-right: 2rem;
   border-radius: 0.2rem;
+}
+
+/* ============================================
+   BLOG PAGE 
+   ============================================ */
+.blogPage {
+  max-width: var(--reading-width);
+  
+  /* margin-block sets both Top and Bottom at once */
+  margin-block: 5rem;
+  /* margin-inline sets both Left and Right (centering it) */
+  margin-inline: auto;
+
+  padding: 0 1.25rem;
+
+  color: #292929;
+}
+
+.blogPage hr { 
+  color: var(--color-border);
+}
+
+.blogTitle {
+  font-size: var(--text-xl);
+  line-height: var(--lh-tight);
+}
+
+.blogContent {
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+}
+
+.blogContent img {
+  width: 200px;
+}
+
+.blogCover {
+  width: 200px;
 }

@@ -1,8 +1,7 @@
 ---
-title: My First Post
-date: 2024-12-01
-tags: [nextjs, blog]
+title: Welcome to my blog!
+date: Jan 12, 2026
+tags: [first, post, start, beginning]
+cover: "../../../public/blog/scarlet.jpg"
 ---
-
-# Hello World
-This is my **first** blog post!
+Hello there, this is my first blog post! You may ask, why did I create a blog post? 

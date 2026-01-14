@@ -1,9 +1,9 @@
 ---
 title: Desktop Pet
-date: 2024-12-01
+date: Jan 12, 2026
 tags: [nextjs, blog]
+cover: "../../../public/blog/scarlet.jpg"
 ---
-
 # How I Made the BEST "Desktop Pet" 
 During a hackathon, me and a couple buddies decided 
 to create a pet that would roam around your desktop 
@@ -30,6 +30,3 @@ To do this, we need to tell Godot to render the background as transparent glass 
 
 ## Phase Two 
 The Scene Tree
-
-
-
