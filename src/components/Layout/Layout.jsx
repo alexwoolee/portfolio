@@ -1,46 +1,63 @@
 /* React hooks */
-import { useState } from "react"
+import { useState, useEffect } from "react";
 
 /* Third-party libraries */
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 /* Components */
-import HomeLink from "./HomeLink"
-import SettingsLink from "./SettingsLink"
-import WeatherTime from "./WeatherTime"
-import MusicCard from "@/components/media/MusicCard"
-import Controls from "./Controls"
+import HomeLink from "./HomeLink";
+import SettingsLink from "./SettingsLink";
+import WeatherTime from "./WeatherTime";
+import MusicCard from "@/components/media/MusicCard";
+import Controls from "./Controls";
 
 /* Assets */
-import homeImg from "@/assets/sidebar/rain.png"
-import aboutImg from "@/assets/sidebar/together.png"
-import projImg from "@/assets/sidebar/proud.png"
-import blogImg from "@/assets/sidebar/beauty.png"
+import homeImg from "@/assets/sidebar/rain.png";
+import aboutImg from "@/assets/sidebar/together.png";
+import projImg from "@/assets/sidebar/proud.png";
+import blogImg from "@/assets/sidebar/beauty.png";
 
 /* Icons */
-import { PanelLeft } from "lucide-react"
-import { Music } from "lucide-react"
+import { PanelLeft } from "lucide-react";
+import { Music } from "lucide-react";
 
 /* Styles */
-import styles from "./layout.module.css"
+import styles from "./layout.module.css";
 
 const NewFront = () => {
-  const [minimized, setMinimized] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  // Instead of default false:
+  // Check localStorage immediately when state is created
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    if (window.innerWidth < 1024) {
+      return false;
+    }
+
+    const saved = localStorage.getItem("sidebarPref");
+    // If key doesn't exist -> default to true (open)
+    return saved !== null ? JSON.parse(saved) : true;
+  });
+
+  useEffect(() => {
+    console.log(`isSidebarOpen is initially set to ${isSidebarOpen}`);
+  }, []);
+
+  // Use effect for saving & logging
+  useEffect(() => {
+    console.log(
+      `isSidebarOpen is now: ${isSidebarOpen ? "Open" : "Collapsed"}`,
+    );
+    localStorage.setItem("sidebarPref", JSON.stringify(isSidebarOpen));
+  }, [isSidebarOpen]);
 
   const handleClick = () => {
-    setMinimized(!minimized)
-    console.log(`Minimized is now set to ${minimized}...`)
-  }
-
-  const handleSettingsOpen = () => setIsSettingsOpen(!isSettingsOpen)
+    // If it was true, NOW becomes -> false
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div id="main">
       {/* Sidebar */}
-      <div
-        className={minimized === false ? styles.column : styles.minimizedColumn}
-      >
+      <div className={isSidebarOpen ? styles.column : styles.minimizedColumn}>
         {/* List */}
         <div className={styles.linkListWrapper}>
           {/* Header */}
@@ -59,14 +76,15 @@ const NewFront = () => {
             <HomeLink path="/about" img={aboutImg} title="About"></HomeLink>
             <HomeLink path="/proj" img={projImg} title="Projects"></HomeLink>
             <HomeLink path="/blog" img={blogImg} title="Blog"></HomeLink>
-            <SettingsLink
-              isOpen={isSettingsOpen}
-              onClick={handleSettingsOpen}
-            ></SettingsLink>
+            <HomeLink
+              path="/settings"
+              isSetting={true}
+              title="Settings"
+            ></HomeLink>
           </aside>
         </div>
         {/* Music Component */}
-        { minimized === true ? "" : <MusicCard /> }
+        {isSidebarOpen && <MusicCard />}
       </div>
       <main id="content-display">
         <Outlet></Outlet>
@@ -75,4 +93,4 @@ const NewFront = () => {
   );
 };
 
-export default NewFront
+export default NewFront;

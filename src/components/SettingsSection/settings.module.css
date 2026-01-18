@@ -1,0 +1,111 @@
+/* === SETTINGS === */ 
+.settingsCtn {
+    background-color: #31C3A6;
+}
+
+/* === OPTIONS === */
+@font-face {
+  font-family: settingsFont;
+  src: url('/fonts/OvercameDemoBold.woff');
+}
+
+.optionsCtn {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+  background-color: #AFFFF3;
+  z-index: 20;
+  display: flex;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  font-size: xx-large;
+  font-family: settingsFont;
+  line-height: 1;
+  color: #014740;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+.option:nth-child(2) {
+    margin-left: 3rem;
+}
+.option:nth-child(3) {
+    margin-left: 6rem;
+}
+.option:nth-child(4) {
+    margin-left: 11rem;
+}
+.option:nth-child(5) {
+    margin-left: 0rem;
+}
+.option:nth-child(6) {
+    margin-left: 3rem;
+}
+.option::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 100%;
+  background-color: transparent;
+  animation: slide-left 8s linear infinite;
+  animation-play-state: paused;
+}
+.option:hover {
+  background-color: #F47A45;
+  color: #AFFFF3;
+}
+.option:hover .toggleCtn {
+  background-color: #FDC330;
+  color: #AFFFF3;
+}
+.option:hover::before {
+  animation-play-state: running;
+  background-color: #E16639;
+}
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-530px);
+  }
+}
+.optionLabel {
+  font-weight: 700;
+  position: absolute;
+  left: 100px;
+}
+.optionLogo {
+  width: 40px;
+  height: 40px;
+  transform: translate(50%, 0%);
+}
+.toggleCtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-30%, -50%);
+  width: 80px;
+  height: 40px;
+  background-color: #49DBBE;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.handle {
+  width: 30px;
+  height: 30px;
+  background-color: #004742;
+  border-radius: 50%;
+  z-index: 20;
+}

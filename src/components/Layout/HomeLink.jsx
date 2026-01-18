@@ -1,10 +1,13 @@
 /* Third-party libraries */
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+
+/* Icons */
+import { Settings } from "lucide-react"
 
 /* Styles */
-import styles from "./layout.module.css"
+import styles from "./layout.module.css";
 
-const HomeLink = ({ path, img, title }) => {
+const HomeLink = ({ path, img, title, isSetting }) => {
   return (
     <NavLink
       to={path}
@@ -13,11 +16,15 @@ const HomeLink = ({ path, img, title }) => {
       }
     >
       <div className={styles.iconWrapper}>
-        <img src={img} alt={path} className={styles.linkImg}></img>
+        {isSetting ? (
+          <Settings />
+        ) : (
+          <img src={img} alt={path} className={styles.linkImg}></img>
+        )}
       </div>
       <p className={`${styles.linkTitle} title-sm block`}>{title}</p>
     </NavLink>
   );
 };
 
-export default HomeLink
+export default HomeLink;

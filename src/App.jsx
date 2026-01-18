@@ -19,6 +19,7 @@ import About from "@/components/AboutSection/About.jsx"
 import Projects from "@/components/ProjectShowcase/Projects.jsx"
 import Blog from "@/components/BlogSection/Blog.jsx"
 import BlogPage from "@/components/BlogSection/BlogPage.jsx"
+import Settings from "@/components/SettingsSection/Settings.jsx"
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/proj" element={<Projects />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/settings" element={<Settings />}></Route>
             <Route path="blog/:id" element={<BlogPage />} /> 
           </Route>
         </Routes>

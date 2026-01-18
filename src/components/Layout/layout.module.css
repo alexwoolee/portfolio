@@ -5,8 +5,11 @@
   height: 100dvh;
   border-right: var(--border-gray) 1px solid;
   position: relative;
-  width: 20rem;
-  z-index: 10;
+  width: 18rem;
+  z-index: 100;
+
+  /* Since column is flex item of #main it'll shrink */
+  flex-shrink: 0; /* Tell it to not shrink */
 }
 
 .minimizedColumn {
@@ -16,7 +19,7 @@
   border-right: var(--border-gray) 1px solid;
   position: relative;
   width: 4rem;
-  z-index: 10;
+  z-index: 100;
 }
 
 .minimizedColumn .linkTitle {
@@ -145,9 +148,8 @@
   transform: scale(1.02);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .column {
-    width: 20rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -155,8 +157,17 @@
   }
 
   .minimizedColumn {
+    width: 0;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+  }
+  .minimizedColumn .linkListHeader .iconWrapper {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 10px;
+  }
+  .minimizedColumn .link {
+    display: none;
   }
 }
