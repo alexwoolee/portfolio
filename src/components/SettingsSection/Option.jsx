@@ -2,7 +2,7 @@
 import { motion } from "motion/react"
 
 /* Components */
-import ToggleSwitch from "./toggleSwitch"
+import ToggleSwitch from "./ToggleSwitch"
 import styles from "./settings.module.css"
 
 const Option = () => {
