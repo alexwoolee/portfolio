@@ -7,13 +7,14 @@ import { Settings } from "lucide-react"
 /* Styles */
 import styles from "./layout.module.css";
 
-const HomeLink = ({ path, img, title, isSetting }) => {
+const HomeLink = ({ path, img, title, isSetting, onLinkClick }) => {
   return (
     <NavLink
       to={path}
       className={({ isActive }) =>
         `${styles.link} ${isActive ? styles.activeLink : ""}`
       }
+      onClick={onLinkClick}
     >
       <div className={styles.iconWrapper}>
         {isSetting ? (

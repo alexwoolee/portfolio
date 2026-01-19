@@ -1,5 +1,5 @@
 /* React hooks */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /* Third-party libraries */
 import { Outlet } from "react-router-dom";
@@ -37,6 +37,28 @@ const NewFront = () => {
     return saved !== null ? JSON.parse(saved) : true;
   });
 
+  const handleClick = () => {
+    // If it was true, NOW becomes -> false
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  // sidebarRef to hold the sidebar DOM element
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   useEffect(() => {
     console.log(`isSidebarOpen is initially set to ${isSidebarOpen}`);
   }, []);
@@ -49,15 +71,13 @@ const NewFront = () => {
     localStorage.setItem("sidebarPref", JSON.stringify(isSidebarOpen));
   }, [isSidebarOpen]);
 
-  const handleClick = () => {
-    // If it was true, NOW becomes -> false
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <div id="main">
       {/* Sidebar */}
-      <div className={isSidebarOpen ? styles.column : styles.minimizedColumn}>
+      <div
+        className={isSidebarOpen ? styles.column : styles.minimizedColumn}
+        ref={sidebarRef}
+      >
         {/* List */}
         <div className={styles.linkListWrapper}>
           {/* Header */}
@@ -72,10 +92,30 @@ const NewFront = () => {
           </div>
           {/* Links */}
           <aside>
-            <HomeLink path="/home" img={homeImg} title="Home"></HomeLink>
-            <HomeLink path="/about" img={aboutImg} title="About"></HomeLink>
-            <HomeLink path="/proj" img={projImg} title="Projects"></HomeLink>
-            <HomeLink path="/blog" img={blogImg} title="Blog"></HomeLink>
+            <HomeLink
+              path="/home"
+              img={homeImg}
+              title="Home"
+              onLinkClick={handleClick}
+            ></HomeLink>
+            <HomeLink
+              path="/about"
+              img={aboutImg}
+              title="About"
+              onLinkClick={handleClick}
+            ></HomeLink>
+            <HomeLink
+              path="/proj"
+              img={projImg}
+              title="Projects"
+              onLinkClick={handleClick}
+            ></HomeLink>
+            <HomeLink
+              path="/blog"
+              img={blogImg}
+              title="Blog"
+              onLinkClick={handleClick}
+            ></HomeLink>
             <HomeLink
               path="/settings"
               isSetting={true}
