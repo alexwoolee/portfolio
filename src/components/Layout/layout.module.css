@@ -6,32 +6,29 @@
   border-right: var(--border-gray) 1px solid;
   position: relative;
   width: 18rem;
-  z-index: 100;
+  z-index: 1000;
 
-  /* Since column is flex item of #main it'll shrink */
+  transition: width 0.1s ease-in-out;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Since column is flex item of #main it will shrink */
   flex-shrink: 0; /* Tell it to not shrink */
 }
 
+/* === Minimized Column === */
 .minimizedColumn {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  border-right: var(--border-gray) 1px solid;
-  position: relative;
   width: 4rem;
-  z-index: 100;
 }
 
-.minimizedColumn .linkTitle {
-  display: none;
-}
-.minimizedColumn .linkListTitle,
-.minimizedColumn .linkListHeader img {
-  display: none;
-}
 .minimizedColumn .linkListHeader {
+  flex-direction: row;
   justify-content: center;
-  flex-direction: column;
+}
+
+.minimizedColumn .textLogo {
+  display: none;
 }
 
 /* === LINK LIST CONTAINER === */
@@ -45,6 +42,9 @@
 
 /* === LINK LIST HEADER === */
 .linkListHeader {
+  height: 100%;
+  min-height: 50px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,8 +55,44 @@
   font-size: larger;
 }
 
+.textLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.panelIconWrapper {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
 .panelLeft {
   stroke: var(--murk);
+  stroke-width: 3px;
+}
+
+.panelIconWrapper .panelLeft {
+  box-sizing: border-box;
+}
+
+.panelIconWrapper:hover {
+  background-color: var(--murk);
+}
+.panelIconWrapper:hover .panelLeft {
+  stroke: white;
   stroke-width: 3px;
 }
 
@@ -87,7 +123,7 @@
 }
 
 .activeLink {
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: var(--murk) !important;
   color: white !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -121,33 +157,6 @@
   font-weight: 500;
 }
 
-/* === CONTROLS === */
-.toggles {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem;
-}
-
-.toggleBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
-  border: none;
-}
-
-.activeBtn {
-  background-color: var(--murk) !important;
-  color: white !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transform: scale(1.02);
-}
-
 @media screen and (max-width: 1024px) {
   .column {
     position: absolute;
@@ -155,14 +164,13 @@
     left: 0;
     background-color: var(--sand);
   }
-
   .minimizedColumn {
     width: 0;
     border: none;
     overflow: hidden;
     padding: 0;
   }
-  .minimizedColumn .linkListHeader .iconWrapper {
+  .minimizedColumn .linkListHeader .panelIconWrapper {
     position: fixed;
     top: 10px;
     left: 10px;

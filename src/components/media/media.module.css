@@ -7,8 +7,8 @@
   width: 100%;
   padding: 1rem;
   background-color: var(--sand);
-  border-top: 1px solid rgba(0,0,0,0.05);
-  gap: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 0.8rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -20,31 +20,28 @@
 /* === MUSIC INFO & COVER === */
 .musicInfo {
   display: flex;
-  align-items: center;
+  overflow: hidden;
+  gap: 0.5rem;
 }
 
 .musicCover {
   width: 64px;
   height: 64px;
-  border-radius: 0.2rem;
-  object-fit: cover;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .musicText {
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-  overflow: hidden;
+  justify-content: center;
 }
 
 .musicTitle {
   font-size: 0.9rem;
-  font-weight: 600;
   margin-top: 0;
-  margin-bottom: 4px;
+  margin-bottom: 0.2rem;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -63,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5em;
 }
 
 .musicBtn {
@@ -82,7 +79,7 @@
 
 .musicBtn:hover {
   transform: scale(1.1);
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .playBtn {
@@ -95,6 +92,12 @@
 .playBtn:hover {
   background-color: var(--dark-murk);
   color: white;
+}
+
+.skipBtn {
+  width: 40px;
+  height: 40px;
+  color: var(--murk);
 }
 
 /* === PROGRESS BAR === */

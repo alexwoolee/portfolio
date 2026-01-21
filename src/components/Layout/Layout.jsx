@@ -28,40 +28,69 @@ const NewFront = () => {
   // Instead of default false:
   // Check localStorage immediately when state is created
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    if (window.innerWidth < 1024) {
+    // If window is less than 1024px
+    if (window.innerWidth <= 1024) {
+      // make the sidebar false (closed)
       return false;
     }
-
+    // check if pref exists in localStorage using the key "sidebarPref"
     const saved = localStorage.getItem("sidebarPref");
     // If key doesn't exist -> default to true (open)
     return saved !== null ? JSON.parse(saved) : true;
   });
 
   const handleClick = () => {
-    // If it was true, NOW becomes -> false
+    // If pref was true, set it to false
+    // If pres was false, set it to true
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const handleNavClick = () => {
+    console.log("handleNavClick was called!")
+
+    if (window.innerWidth <= 1024) {
+      console.log("hello world")
+      setIsSidebarOpen(false);
+    }
+  }
 
   // sidebarRef to hold the sidebar DOM element
   const sidebarRef = useRef(null);
 
+  // useEffect to check the space outside of the layout
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      // If width is <= 1024, then enable clicking outside of layout, to set sidebar to false (closed)
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        window.innerWidth <= 1024
+      ) {
         setIsSidebarOpen(false);
       }
     };
-
+    // listen to mousedown events, perform handleClickOutside if so
     document.addEventListener("mousedown", handleClickOutside);
-
+    // clean up event listener
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+    }
+  }, [])
 
+  // Handle window resize events
   useEffect(() => {
-    console.log(`isSidebarOpen is initially set to ${isSidebarOpen}`);
-  }, []);
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   // Use effect for saving & logging
   useEffect(() => {
@@ -75,18 +104,18 @@ const NewFront = () => {
     <div id="main">
       {/* Sidebar */}
       <div
-        className={isSidebarOpen ? styles.column : styles.minimizedColumn}
+        className={`${styles.column} ${!isSidebarOpen ? styles.minimizedColumn : ""}`}
         ref={sidebarRef}
       >
         {/* List */}
         <div className={styles.linkListWrapper}>
           {/* Header */}
           <div className={styles.linkListHeader}>
-            <div className="flex flex-row items-center gap-3">
-              <img src="\logo.png" alt="logo" className="w-8 h-8" />
+            <div className={styles.textLogo}>
+              <img src="\logo.png" alt="website logo" className={styles.logo}/>
               <h1 className={styles.linkListTitle}>AWL</h1>
             </div>
-            <button onClick={handleClick} className={styles.iconWrapper}>
+            <button onClick={handleClick} className={styles.panelIconWrapper}>
               <PanelLeft size={20} className={styles.panelLeft} />
             </button>
           </div>
@@ -96,35 +125,38 @@ const NewFront = () => {
               path="/home"
               img={homeImg}
               title="Home"
-              onLinkClick={handleClick}
+              onLinkClick={handleNavClick}
             ></HomeLink>
             <HomeLink
               path="/about"
               img={aboutImg}
               title="About"
-              onLinkClick={handleClick}
+              onLinkClick={handleNavClick}
             ></HomeLink>
             <HomeLink
               path="/proj"
               img={projImg}
               title="Projects"
-              onLinkClick={handleClick}
+              onLinkClick={handleNavClick}
             ></HomeLink>
             <HomeLink
               path="/blog"
               img={blogImg}
               title="Blog"
-              onLinkClick={handleClick}
+              onLinkClick={handleNavClick}
             ></HomeLink>
             <HomeLink
               path="/settings"
               isSetting={true}
               title="Settings"
+              onLinkClick={handleNavClick}
             ></HomeLink>
           </aside>
         </div>
         {/* Music Component */}
-        {isSidebarOpen && <MusicCard />}
+        <div className={`${isSidebarOpen ? "block" : "hidden"}`}>
+          <MusicCard />
+        </div>
       </div>
       <main id="content-display">
         <Outlet></Outlet>
