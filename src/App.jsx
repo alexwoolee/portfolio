@@ -8,7 +8,7 @@ import { useEffect } from "react"
 
 /* Third-party libraries */
 import { useParams } from "react-router"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import AOS from "aos"
 import SimpleBar from 'simplebar-react'
 
@@ -36,8 +36,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />}></Route>
-            <Route path="home" element={<Home />} />
+            <Route index element={<Navigate to="/home" />}></Route>
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />}></Route>
             <Route path="/proj" element={<Projects />}></Route>
             <Route path="/blog" element={<Blog />}></Route>

@@ -1,5 +1,5 @@
 /* React hooks */
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 /* Third-party libraries */
 import { PanelRightOpen } from "lucide-react"
@@ -19,11 +19,18 @@ import styles from "./projects.module.css"
 const Projects = () => {
   // selectedProject is an obj that stores a component's prop, to access a prop => selectedProject.prop_example
   const [selectedProject, setSelectedProject] = useState(projects[0])
-  const [view, setView] = useState("grid")
+  const [view, setView] = useState(() => {
+    const saved = localStorage.getItem("projViewPref")
+    return saved !== null ? JSON.parse(saved) : "grid"
+  })
 
   const handleView = (view) => {
     setView(view)
   }
+
+  useEffect(() => {
+    localStorage.setItem("projViewPref", JSON.stringify(view))
+  }, [view])
 
   return (
     <div className={styles.projectsPage}>

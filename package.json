@@ -35,7 +35,8 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "simplebar-react": "^3.3.2",
-    "three": "^0.181.0"
+    "three": "^0.181.0",
+    "use-sound": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

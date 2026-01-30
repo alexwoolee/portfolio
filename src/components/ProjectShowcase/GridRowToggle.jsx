@@ -4,7 +4,7 @@ import { Rows3, Grid2x2 } from "lucide-react"
 /* Styles */
 import styles from './projects.module.css'
 
-const GridRowToggle = ({ view, onToggle}) => {
+const GridRowToggle = ({ view, onToggle }) => {
   return (
     <div className={styles.gridRowToggle}>
       <button className={`${styles.gridToggle} ${view === 'grid' ? styles.activeToggle : ''}`} onClick={() => onToggle('grid')} >

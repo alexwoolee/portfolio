@@ -46,10 +46,7 @@ const NewFront = () => {
   };
 
   const handleNavClick = () => {
-    console.log("handleNavClick was called!")
-
     if (window.innerWidth <= 1024) {
-      console.log("hello world")
       setIsSidebarOpen(false);
     }
   }
@@ -94,9 +91,6 @@ const NewFront = () => {
 
   // Use effect for saving & logging
   useEffect(() => {
-    console.log(
-      `isSidebarOpen is now: ${isSidebarOpen ? "Open" : "Collapsed"}`,
-    );
     localStorage.setItem("sidebarPref", JSON.stringify(isSidebarOpen));
   }, [isSidebarOpen]);
 
