@@ -1,25 +1,18 @@
-/* React hooks */
-import { useState, useRef } from "react";
-
+import { useRef } from "react";
 /* Third-party libraries */
 import { motion } from "motion/react";
-
 /* Styles */
 import styles from "./settings.module.css";
 
-const ToggleSwitch = () => {
-  const [isOn, setIsOn] = useState(false)
-  const audioRef = useRef(null)
-
-  const toggle = () => setIsOn(!isOn);
+const ToggleSwitch = ({ isActive }) => {
+  const audioRef = useRef(null);
 
   return (
-    <button
-      className={`${styles.toggleCtn} ${isOn ? "justify-start" : "justify-end"}`}
-      onClick={toggle}
+    <div
+      className={`${styles.toggleCtn} ${isActive ? styles.justifyStart : styles.justifyEnd}`}
     >
       <audio ref={audioRef}>
-        <source src="/audio/menu.mp3" type="audio/mpeg" /> 
+        <source src="/audio/menu.mp3" type="audio/mpeg" />
       </audio>
       <motion.div
         className={styles.handle}
@@ -30,7 +23,7 @@ const ToggleSwitch = () => {
           bounce: 0.2,
         }}
       />
-    </button>
+    </div>
   );
 };
 

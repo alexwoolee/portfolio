@@ -65,6 +65,13 @@
   --murk: #5F5D4E;
   --dark-murk: #3B3A32;
   --warm-ocean: #19E8E2;
+
+  /* Settings */
+  --box-size: 800px;
+  --box-width: 100vw;
+  --box-height: 100vh;
+
+  --depth: 2000px;
 }
 
 /* === BASE HTML ELEMENTS === */

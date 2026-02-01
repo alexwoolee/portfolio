@@ -1,60 +1,87 @@
 /* React hooks */
-import { useState } from "react";
-
+import { useEffect, useState, useCallback } from "react";
 /* Components */
 import Option from "./Option";
-
 /* Styles */
 import styles from "./settings.module.css";
 
-const ops = [
+const options_list = [
   {
-    opOne: "dark-mode",
-    opLabel: "DARK MODE",
+    id: "dark-mode",
+    label: "DARK MODE",
   },
   {
-    opTwo: "TBA",
-    opLabel: "DARK MODE",
+    id: "read-mode",
+    label: "READ MODE",
   },
   {
-    opThree: "TBA",
-    opLabel: "DARK MODE",
+    id: "effects",
+    label: "EFFECTS",
   },
   {
-    opFour: "TBA",
-    opLabel: "DARK MODE",
+    id: "animals",
+    label: "ANIMALS",
   },
   {
-    opFive: "TBA",
-    opLabel: "DARK MODE",
+    id: "custom-cursor",
+    label: "CUSTOM CURSOR",
   },
   {
-    opSix: "TBA",
-    opLabel: "DARK MODE",
+    id: "ai",
+    label: "AI",
   },
 ];
 
 const Settings = () => {
-  const [activeOption, setActiveOption] = useState(null);
+  const [activeOptions, setActiveOptions] = useState(() => {
+    const saved = localStorage.getItem("my-app-settings");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("my-app-settings", JSON.stringify(activeOptions));
+  }, [activeOptions]);
+
+  const handleToggle = useCallback((id) => {
+    setActiveOptions((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((item) => item !== id);
+      } else {
+        return [...prev, id];
+      }
+    });
+  }, []);
 
   return (
-    <div className={styles.settingsCtn}>
+    <section className={styles.settingsCtn}>
       <div className={styles.optionsCtn}>
-        <div className={styles.room}>
+        <div className={styles.room} aria-hidden="true">
           {/* WALL 1: Left */}
           <div className={styles.wallLeft}>LEFT</div>
           {/* WALL 2: Center */}
           <div className={styles.wallCenter}>CENTER</div>
           {/* WALL #: Top */}
           <div className={styles.wallRight}>RIGHT</div>
-          <div className={styles.options}>
-            {ops.map((op, i) => {
-              return <Option key={i} opLabel={op.opLabel} />;
-            })}
-          </div>
+          <div className={styles.wallTop}>TOP</div>
+          <div className={styles.wallBottom}>BOTTOM</div>
         </div>
+        <ul className={styles.options}>
+          {options_list.map((option, i) => {
+            const isThisOptionActive = activeOptions.includes(option.id);
+            return (
+              <li key={option.id}>
+                <Option
+                  id={option.id}
+                  optionLabel={option.label}
+                  onToggle={handleToggle}
+                  activeOption={isThisOptionActive}
+                />
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

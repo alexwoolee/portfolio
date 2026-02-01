@@ -1,50 +1,53 @@
-/* Third-party libraries */
+import { useRef, memo } from "react";
+/* === Third-party libraries === */
 import { motion } from "motion/react";
 import useSound from "use-sound";
-
-/* Components */
+/* === Components === */
 import ToggleSwitch from "./ToggleSwitch";
 import styles from "./settings.module.css";
-
-/* Audio */
+/* === Audio === */
 import menuSfx from "/audio/menu.mp3";
-import { useState } from "react";
 
-const Option = ({ key, opLabel }) => {
+const Option = ({ id, optionLabel, onToggle, activeOption }) => {
   const [play] = useSound(menuSfx, { interrupt: true });
-
-  const [hoverTimer, setHoverTimer] = useState(null);
+  const hoverTimer = useRef(null); 
 
   const handleMouseEnter = () => {
-    const timer = setTimeout(() => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = setTimeout(() => {
       play();
     }, 50);
-    setHoverTimer(timer);
   };
 
   const handleMouseLeave = () => {
-    if (hoverTimer) clearTimeout(hoverTimer);
+    if (hoverTimer.current) {
+      clearTimeout(hoverTimer.current);
+      hoverTimer.current = null;
+    }
   };
 
   return (
-    <motion.div
+    <motion.button
+      type="button"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={styles.option}
-      initial={{ opacity: 0, x: -2000 }}
+      onClick={() => onToggle(id)}
+
+      className={`${styles.option} ${activeOption ? styles.activeOption : ""}`}
+
+      initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      key={key}
     >
       <img
         src="/icons/diamond-icon.png"
-        alt="icon"
+        alt=""
         className={styles.optionLogo}
       />
-      <p className={styles.optionLabel}>{opLabel}</p>
-      <ToggleSwitch />
-    </motion.div>
+      <p className={styles.optionLabel}>{optionLabel}</p>
+      <ToggleSwitch isActive={activeOption} />
+    </motion.button>
   );
 };
 
-export default Option;
+export default memo(Option);
