@@ -8,7 +8,7 @@
 .blogLink {
   display: flex;
   flex-direction: row;
-  background: linear-gradient(135deg, var(--sand) 0%, #e6dfd8 100%);
+  background: linear-gradient(135deg, var(--sand) 0%, var(--color-sand-light) 100%);
   border: 2px solid var(--border-gray);
   padding: 2rem;
   border-radius: 1rem;
@@ -45,7 +45,7 @@
   margin-block: 5rem;
   margin-inline: auto;
   padding: 0 1.25rem;
-  color: #292929;
+  color: var(--color-text-medium);
 }
 
 .blogPage hr { 
@@ -57,9 +57,6 @@
   line-height: var(--lh-tight);
 }
 
-.blogDate {
-  /* Blog date styles */
-}
 
 .blogContent {
   font-size: var(--text-base);

@@ -12,7 +12,7 @@
   flex-direction: column;
   flex: 1;
   padding-top: 2rem;
-  background: linear-gradient(135deg, var(--sand) 0%, #e6dfd8 100%); 
+  background: linear-gradient(135deg, var(--sand) 0%, var(--color-sand-light) 100%); 
   overflow-y: auto;
   overflow-x: hidden;
   border-right: var(--border-gray) 1px solid;
@@ -47,7 +47,7 @@
 
 .projectsHeader p {
   margin-bottom: 4rem;
-  color: rgb(96, 96, 96);
+  color: var(--color-text-grey);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -83,10 +83,10 @@
   padding: 2rem;
   min-height: 200px;
   width: 360px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-white-overlay-lighter);
   border-radius: 12px;
   background-color: var(--sand);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 16px var(--color-shadow-medium);
   transition: transform 0.5s;
 }
 
@@ -95,10 +95,10 @@
   padding: 2rem;
   min-height: 200px;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-white-overlay-lighter);
   border-radius: 12px;
   background-color: var(--sand);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 16px var(--color-shadow-medium);
   transition: transform 0.5s;
 }
 
@@ -117,16 +117,8 @@
   border-radius: 12px;
 }
 
-.projCard {
-  /* Project card base styles */
-}
-
 .projCard:hover {
   transform: translateY(-4px);
-}
-
-.projCardContent {
-  /* Project card content container */
 }
 
 .projImg {
@@ -147,7 +139,7 @@
 }
 
 .projAuthors {
-  color: #818182;
+  color: var(--color-muted-text);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -170,7 +162,7 @@
 }
 
 #projAuthors {
-  color: #818182;
+  color: var(--color-muted-text);
   margin: 0rem 0rem 1rem 0rem;
   min-height: 48px;
 }
@@ -195,8 +187,8 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--color-black-overlay);
+  border: 1px solid var(--color-border-medium);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   position: absolute;
@@ -228,7 +220,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border-medium);
   border-radius: 2rem;
   background-color: var(--murk);
 }
@@ -238,7 +230,7 @@
   position: absolute;
   width: 1px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--color-border-medium);
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
@@ -263,10 +255,10 @@
 }
 
 .gridRowToggle .gridToggle:hover, .gridRowToggle .rowToggle:hover {
-  background-color: rgba(250, 72, 2, 0.914);  
+  background-color: var(--color-orange-hover);  
 }
 
 .activeToggle {
-  background-color: rgba(250, 72, 2, 0.914);
+  background-color: var(--color-orange-hover);
   color: white;
 }

@@ -7,7 +7,7 @@
   width: 100%;
   padding: 1rem;
   background-color: var(--sand);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--color-border-light);
   gap: 0.8rem;
 }
 
@@ -28,7 +28,7 @@
   width: 64px;
   height: 64px;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px var(--color-shadow-dark);
 }
 
 .musicText {
@@ -48,7 +48,7 @@
 .musicArtist {
   font-size: 0.8rem;
   font-weight: 550;
-  color: grey;
+  color: var(--color-grey);
   margin-top: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -79,7 +79,7 @@
 
 .musicBtn:hover {
   transform: scale(1.1);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-black-overlay);
 }
 
 .playBtn {
@@ -123,7 +123,7 @@
   top: 0;
   left: 0;
   height: 4px;
-  background-color: rgb(255, 128, 0);
+  background-color: var(--color-orange);
   transition: width 0.1s linear;
   border-radius: 4px;
 }
@@ -136,6 +136,6 @@
 
 .progressTimes span {
   font-size: 0.75rem;
-  color: grey;
+  color: var(--color-grey);
   font-variant-numeric: tabular-nums;
 }

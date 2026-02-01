@@ -31,16 +31,9 @@
 .profession {
   font-size: 28px;
   font-weight: 200;
-  color: #818182;
+  color: var(--color-muted-text);
 }
 
-.profile {
-  /* Profile image styles */
-}
-
-.bio {
-  /* Bio text styles */
-}
 
 .bioCtn {
   max-width: 700px;
@@ -58,7 +51,7 @@
 }
 
 .progLanguages p {
-  background-color: rgb(208, 157, 255);
+  background-color: var(--color-purple);
   padding: 0.25rem 0.75rem;
   border-radius: 1.5rem;
   margin-right: 0.75rem;
@@ -100,6 +93,7 @@
   white-space: nowrap;
   overflow: hidden;
   width: 75%;
+  max-width: 1075px;
   margin: 4rem auto;
   position: relative;
 }
@@ -165,8 +159,8 @@
   padding: 0 1rem;
   border-radius: 0.75rem;
   height: 3rem;
-  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15),
-    0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0.2rem 0.5rem var(--color-white-overlay-light),
+    0 0.5rem 1.5rem var(--color-white-overlay-lighter);
   outline: none;
 }
 
@@ -225,27 +219,17 @@
   stroke-width: 3px;
 }
 
+.iconArrowDown svg circle {
+  fill: transparent;
+  stroke: none;
+}
+
 .projectButtonWrapper:hover .iconSmallCircle {
   opacity: 1;
   transform: scale(2);
   fill: white;
   stroke: white;
   transition: all 0.4s ease;
-}
-
-.projectButtonWrapper:hover .iconArrowDown {
-  opacity: 1;
-  transform: scale(0.8) rotate(0deg);
-}
-
-.iconArrowDown svg circle {
-  fill: transparent;
-  stroke: none;
-}
-
-.iconArrowDown {
-  stroke: black;
-  transition: stroke 0.4s ease;
 }
 
 .projectButtonWrapper:hover .iconArrowDown {
@@ -259,10 +243,6 @@
 .expCtn {
   margin: 3rem auto;
 }
-
-/* .expType {
-  margin-bottom: 1rem;
-} */
 
 .exp {
   display: flex;
@@ -294,22 +274,14 @@
   margin: 0;
 }
 
-.company {
-  /* Company name styles */
-}
-
 .expPeriod {
-  color: grey;
+  color: var(--color-grey);
 }
-
-/* .expDesc {
-  font-weight: 100;
-} */
 
 .divider {
   width: 100%;
   height: 1px;
-  background-color: #cfcccc;
+  background-color: var(--color-divider);
   margin-bottom: 3rem;
 }
 
@@ -340,14 +312,14 @@
 
 .uniMeta {
   margin: 0.2rem 0 0 0;
-  color: #818182;
+  color: var(--color-muted-text);
   font-size: 0.95rem;
 }
 
 .compactDivider {
   border: 0;
   height: 1px;
-  background: #dcdcdc;
+  background: var(--color-divider-light);
   margin: 1.5rem 0;
 }
 
@@ -355,7 +327,7 @@
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #818182;
+  color: var(--color-muted-text);
   margin-bottom: 1rem;
 }
 
@@ -385,7 +357,7 @@
 
 .compactList li {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--color-text-dark);
   margin-bottom: 0.25rem;
   padding-left: 1rem;
   position: relative;
@@ -396,13 +368,13 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #818182;
+  color: var(--color-muted-text);
 }
 
 /* === TOGGLE CONTROL === */
 .toggleContainer {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-black-overlay);
   padding: 0.3rem;
   border-radius: 0.75rem;
   gap: 0.5rem;
@@ -420,18 +392,18 @@
   font-weight: 500;
   transition: all 0.3s ease;
   background-color: transparent;
-  color: #818182;
+  color: var(--color-muted-text);
 }
 
 .toggleBtn:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-white-overlay);
   color: black;
 }
 
 .activeBtn {
   background-color: var(--murk) !important;
   color: white !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--color-shadow-light);
   transform: scale(1.02);
 }
 
@@ -439,8 +411,8 @@
 .contactCtn {
   padding: 2rem;
   box-sizing: border-box;
-  color: orangered;
-  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-orangered);
+  background-color: var(--color-black-overlay);
   border-radius: 1.2rem;
   max-width: 1200px;
   width: 100%;
@@ -455,9 +427,6 @@
   .contactCtn {
     flex-direction: column;
   }
-  /* .contactTxt {
-    width: 100%;
-  } */
 }
 
 .contactText {
@@ -472,7 +441,7 @@
 }
 
 .contactText p {
-  color: #333;
+  color: var(--color-text-dark);
   line-height: 1.5;
 }
 

@@ -5,7 +5,7 @@
 }
 
 .settingsCtn {
-  background-color: #31c3a6;
+  background-color: var(--color-settings-bg);
 }
 
 .room {
@@ -44,7 +44,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
   grid-area: stack;
   z-index: 1000;
 
@@ -54,7 +53,7 @@
 }
 
 .option {
-  background-color: #affff3;
+  background-color: var(--color-settings-option);
   display: flex;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   width: 500px;
@@ -62,7 +61,7 @@
   font-size: xx-large;
   font-family: settingsFont;
   line-height: 1;
-  color: #014740;
+  color: var(--color-settings-text);
   position: relative;
   overflow: hidden;
   margin-bottom: 0.85rem;
@@ -83,32 +82,32 @@
 }
 
 .option:hover {
-  background-color: #f47a45;
-  color: #affff3;
+  background-color: var(--color-settings-hover);
+  color: var(--color-settings-option);
 }
 
 .activeOption {
-  background-color: #004742;
-  color: #affff3;
+  background-color: var(--color-settings-active);
+  color: var(--color-settings-option);
 }
 
 .option:hover .toggleCtn {
-  background-color: #fdc330;
-  color: #affff3;
+  background-color: var(--color-settings-toggle);
+  color: var(--color-settings-option);
 }
 
 .activeOption .toggleCtn {
-  background-color: #fdc330;
+  background-color: var(--color-settings-toggle);
 }
 
 .option:hover::before {
   animation-play-state: running;
-  background-color: #e16639;
+  background-color: var(--color-settings-hover-dark);
 }
 
 .activeOption::before {
   animation-play-state: running;
-  background-color: #e16639;
+  background-color: var(--color-settings-hover-dark);
 }
 
 .option:nth-child(2) {
@@ -154,7 +153,7 @@
   transform: translate(-30%, -50%);
   width: 80px;
   height: 40px;
-  background-color: #49dbbe;
+  background-color: var(--color-settings-toggle-bg);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -172,7 +171,7 @@
 .handle {
   width: 30px;
   height: 30px;
-  background-color: #004742;
+  background-color: var(--color-settings-active);
   border-radius: 50%;
   z-index: 20;
 }
@@ -197,7 +196,7 @@
 .wallLeft {
   width: var(--depth);
   height: var(--box-height);
-  background-color: #48DABD;
+  background-color: var(--color-wall-left);
   /* Rotate, push to the left edge, then adjust to start at screen */
   transform: translate(-50%, -50%) rotateY(-90deg) translateZ(calc(var(--box-width) / 2));
 }
@@ -205,7 +204,7 @@
 .wallRight {
   width: var(--depth);
   height: var(--box-height);
-  background-color: #48DABD;
+  background-color: var(--color-wall-left);
   transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc(var(--box-width) / 2));
 }
 
@@ -213,14 +212,14 @@
 .wallTop {
   width: var(--box-width);
   height: var(--depth);
-  background-color: #43D5B8;
+  background-color: var(--color-wall-top);
   transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc(var(--box-height) / 2));
 }
 
 .wallBottom {
   width: var(--box-width);
   height: var(--depth);
-  background-color: #AFFFF3;
+  background-color: var(--color-wall-bottom);
   transform: translate(-50%, -50%) rotateX(-90deg) translateZ(calc(var(--box-height) / 2));
 }
 
@@ -228,7 +227,7 @@
 .wallCenter {
   width: var(--box-width);
   height: var(--box-height);
-  background-color: #31C3A6;
+  background-color: var(--color-settings-bg);
   /* Since walls are centered, we push it back by half the depth */
   transform: translate(-50%, -50%) translateZ(calc(var(--depth) / -2));
 }

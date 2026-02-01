@@ -106,7 +106,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   background-color: transparent;
-  color: #818182;
+  color: var(--color-muted-text);
 
   width: 100%;
   cursor: pointer;
@@ -117,7 +117,7 @@
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-white-overlay);
   color: black;
   border-radius: 0.5rem;
 }
@@ -126,7 +126,7 @@
   border-radius: 0.2rem;
   background-color: var(--murk) !important;
   color: white !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--color-shadow-light);
   transform: scale(1.02);
 }
 

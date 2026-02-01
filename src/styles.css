@@ -1,11 +1,10 @@
 /* === FONT IMPORTS === */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
@@ -65,6 +64,48 @@
   --murk: #5F5D4E;
   --dark-murk: #3B3A32;
   --warm-ocean: #19E8E2;
+
+  /* Common colors used across components */
+  --color-muted-text: #818182;
+  --color-divider: #cfcccc;
+  --color-divider-light: #dcdcdc;
+  --color-text-dark: #333;
+  --color-text-medium: #292929;
+  --color-text-grey: rgb(96, 96, 96);
+  --color-purple: rgb(208, 157, 255);
+  --color-orange: rgb(255, 128, 0);
+  --color-orange-hover: rgba(250, 72, 2, 0.914);
+  --color-orangered: orangered;
+  --color-grey: grey;
+  --color-light-grey: #e5e5e5;
+  --color-lighter-grey: #f5f5f5;
+  --color-sand-light: #e6dfd8;
+  --color-border-light: rgba(0, 0, 0, 0.05);
+  --color-border-medium: rgba(0, 0, 0, 0.1);
+  --color-white-overlay: rgba(255, 255, 255, 0.5);
+  --color-white-overlay-light: rgba(255, 255, 255, 0.15);
+  --color-white-overlay-lighter: rgba(255, 255, 255, 0.1);
+  --color-white-overlay-dark: rgba(255, 255, 255, 0.2);
+  --color-black-overlay: rgba(0, 0, 0, 0.05);
+  --color-shadow-light: rgba(0, 0, 0, 0.15);
+  --color-shadow-medium: rgba(0, 0, 0, 0.25);
+  --color-shadow-dark: rgba(0, 0, 0, 0.1);
+  --color-sand-overlay: rgba(222, 203, 174, 0.27);
+  --color-dark-bg: rgb(28, 29, 29);
+  --color-text-secondary: rgb(114, 113, 113);
+
+  /* Settings component colors */
+  --color-settings-bg: #31c3a6;
+  --color-settings-option: #affff3;
+  --color-settings-text: #014740;
+  --color-settings-hover: #f47a45;
+  --color-settings-active: #004742;
+  --color-settings-toggle: #fdc330;
+  --color-settings-toggle-bg: #49dbbe;
+  --color-settings-hover-dark: #e16639;
+  --color-wall-left: #48DABD;
+  --color-wall-top: #43D5B8;
+  --color-wall-bottom: #AFFFF3;
 
   /* Settings */
   --box-size: 800px;
@@ -127,32 +168,9 @@ a:hover {
 }
 
 /* === UTILITY CLASSES === */
-/* .text-muted {
-  color: var(--white-transparent);
-} */
-
 .text-center {
   text-align: center;
 }
-
-/* .uppercase {
-  text-transform: uppercase;
-} */
-
-/* .letter-spaced {
-  letter-spacing: 0.05em;
-} */
-
-/* .hero {
-  font-family: "Funnel Display", "M PLUS Rounded 1c", sans-serif;
-  font-weight: 700;
-  font-size: 4rem;
-  line-height: 1.1;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
-  text-align: center;
-  margin: 2rem 0;
-} */
 
 /* === MAIN LAYOUT === */
 #main {
@@ -165,12 +183,6 @@ a:hover {
   width: 100%;
   overflow: hidden;
 }
-
-/* @media screen and (max-width: 1024) {
-  #content-display {
-    padding-left: 0rem;
-  }
-} */
 
 /* === LAYOUT CONTAINERS === */
 .wrapper {
@@ -204,7 +216,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-white-overlay-dark);
   border-radius: 0;
 }
 
@@ -215,7 +227,7 @@ a:hover {
 }
 
 .page-container::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-white-overlay-dark);
   border-radius: 0;
 }
 
@@ -226,27 +238,22 @@ a:hover {
 }
 
 .scrollable-content::-webkit-scrollbar-thumb {
-  background-color: rgba(222, 203, 174, 0.27);
+  background-color: var(--color-sand-overlay);
   border-radius: 0;
 }
 
 .scrollable-content-dark::-webkit-scrollbar {
   width: 10px;
   border-radius: 1rem;
-  background-color: rgb(28, 29, 29);
+  background-color: var(--color-dark-bg);
 }
 
 .scrollable-content-dark::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-white-overlay-dark);
   border-radius: 0;
 }
 
 /* === TYPOGRAPHY UTILITY CLASSES === */
-/* .title-xl {
-  font-size: 2.5rem;
-  font-weight: 600;
-} */
-
 .title-lg {
   font-size: 2rem;
   font-weight: 600;
@@ -262,18 +269,6 @@ a:hover {
   font-weight: 500;
 }
 
-/* .text-sm {
-  font-size: 0.9rem;
-} */
-
-/* .text-xs {
-  font-size: 0.8rem;
-} */
-
-/* .text-xxs {
-  font-size: 0.75rem;
-} */
-
 /* === BUTTONS === */
 .btn-border-reveal {
   background-color: white;
@@ -286,8 +281,8 @@ a:hover {
   border-radius: 0.75rem;
   height: 3rem;
   box-shadow:
-    0 0.2rem 0.5rem rgba(255, 255, 255, 0.15),
-    0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
+    0 0.2rem 0.5rem var(--color-white-overlay-light),
+    0 0.5rem 1.5rem var(--color-white-overlay-lighter);
   outline: none;
 }
 
