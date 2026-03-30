@@ -12,6 +12,5 @@
 - React.js
 - Tailwind.css
 
-
 ## Author
 Alex Woo Lee - [GitHub](https://github.com/alexwoolee)

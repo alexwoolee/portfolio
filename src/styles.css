@@ -1,19 +1,12 @@
-/* === FONT IMPORTS === */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&display=swap');
+/* === Font Imports === */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-/* === CSS VARIABLES === */
+/* === CSS Variables === */
 :root {
   --reading-width: 70ch;
-  /* --- TYPOGRAPHY SCALE --- */
+  /* === Typography Scale === */
   --base-size: 1.25rem;
   --text-sm: 0.95rem;
   --text-base: 1.25rem;
@@ -23,66 +16,37 @@
   --lh-tight: 1.15;
   --lh-medium: 1.25;
   --lh-relaxed: 1.6;
-  --color-text-main: #242424;
-  --color-text-muted: #6b6b6b;
-  --color-border: #f2f2f2;
+  --color-border: #E23604;
 
-  /* Font Families */
-  --framer-font-family: "Fredoka", "Inter", sans-serif;
-  --framer-font-family-bold: "Fredoka", sans-serif;
-  --framer-font-family-bold-italic: "Fredoka", sans-serif;
-  --framer-font-family-italic: "Fredoka", sans-serif;
+  /* === Font Families === */
+  --font-body: "Nunito", sans-serif;
+  --font-heading: "Noto Sans", serif;
 
-  /* Colors */
-  --white-transparent: rgba(255, 255, 255, 0.5);
-  --color-primary: #030412;
-  --color-midnight: #06091f;
-  --color-navy: #161a31;
-  --color-indigo: #1f1e39;
-  --color-dark-grey: #1a1a1a;
-  --color-black: rgb(0, 0, 0);
-  --color-accent: #63c1ff;
-  --color-accent-hover: rgb(255, 255, 255);
+  /* === Colors === */
 
-  /* Palette Colors */
-  --green: #a1ff9a;
-  --matte-black: #21201f;
-  --lavender: #DAD8F0ff;
-  --lavender-2: #D7D5EFff;
-  --charcoal: #595959ff;
-  --soft-blush: #F2DDD7ff;
-  --peach-glow: #F8C499ff;
-  --pale-slate: #C9BEC2ff;
-  --pale-slate-2: #B1AFBEff;
-  --white: #FFFFFFff;
-  --rosy-granite: #87868Bff;
-  --bright-snow: #FBFAF8ff;
-  --light-sand: #ECE8DC;
-  --border-gray: #cdcdcd;
-  --brown: #2D2B2A;
-  --sand: #F2EFE3;
-  --murk: #5F5D4E;
-  --dark-murk: #3B3A32;
-  --warm-ocean: #19E8E2;
+  /* --- Persona Color Palette --- */
+  --blue-deep: #024C58;
+  --green-lime: #CFE04D;
+  --yellow-gold: #E2B331;
+  --red-orange: #ff3b00;
+  --gray-light: #f3f2f2;
+  --teal-soft: #9DE0DA;
+  --teal-light: #A4DFD6;
+  --teal-medium: #1C8B95;
 
-  /* Common colors used across components */
+
+
+  /* --- Common colors --- */
   --color-muted-text: #818182;
   --color-divider: #cfcccc;
   --color-divider-light: #dcdcdc;
   --color-text-dark: #333;
   --color-text-medium: #292929;
   --color-text-grey: rgb(96, 96, 96);
-  --color-purple: rgb(208, 157, 255);
+  --color-lime-green: rgb(204, 255, 0);
   --color-orange: rgb(255, 128, 0);
-  --color-orange-hover: rgba(250, 72, 2, 0.914);
   --color-orangered: orangered;
   --color-grey: grey;
-  --color-light-grey: #e5e5e5;
-  --color-lighter-grey: #f5f5f5;
-  --color-sand-light: #e6dfd8;
-  --color-border-light: rgba(0, 0, 0, 0.05);
-  --color-border-medium: rgba(0, 0, 0, 0.1);
-  --color-white-overlay: rgba(255, 255, 255, 0.5);
   --color-white-overlay-light: rgba(255, 255, 255, 0.15);
   --color-white-overlay-lighter: rgba(255, 255, 255, 0.1);
   --color-white-overlay-dark: rgba(255, 255, 255, 0.2);
@@ -90,24 +54,23 @@
   --color-shadow-light: rgba(0, 0, 0, 0.15);
   --color-shadow-medium: rgba(0, 0, 0, 0.25);
   --color-shadow-dark: rgba(0, 0, 0, 0.1);
-  --color-sand-overlay: rgba(222, 203, 174, 0.27);
   --color-dark-bg: rgb(28, 29, 29);
   --color-text-secondary: rgb(114, 113, 113);
 
-  /* Settings component colors */
-  --color-settings-bg: #31c3a6;
-  --color-settings-option: #affff3;
-  --color-settings-text: #014740;
-  --color-settings-hover: #f47a45;
-  --color-settings-active: #004742;
+  /* --- Settings component colors --- */
+  --color-settings-bg: #0e5f87;
+  --color-settings-option: #f3fbff;
+  --color-settings-text: #0f3552;
+  --color-settings-hover: #7ecbe8;
+  --color-settings-active: #09405c;
   --color-settings-toggle: #fdc330;
-  --color-settings-toggle-bg: #49dbbe;
-  --color-settings-hover-dark: #e16639;
-  --color-wall-left: #48DABD;
-  --color-wall-top: #43D5B8;
-  --color-wall-bottom: #AFFFF3;
+  --color-settings-toggle-bg: #127aa8;
+  --color-settings-hover-dark: #65b8d6;
+  --color-wall-left: #106c9a;
+  --color-wall-top: #0d5f8a;
+  --color-wall-bottom: #188ccc;
 
-  /* Settings */
+  /* === Settings === */
   --box-size: 800px;
   --box-width: 100vw;
   --box-height: 100vh;
@@ -115,20 +78,20 @@
   --depth: 2000px;
 }
 
-/* === BASE HTML ELEMENTS === */
+/* === Base HTML Elements === */
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--framer-font-family);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.6;
   letter-spacing: 0.02em;
   color: black;
-  background-color: var(--sand);
+  background-color: var(--gray-light);
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -136,43 +99,27 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--framer-font-family-bold);
+h3 {
+  font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.05em;
   line-height: 1.2;
   margin: 0.5em 0;
 }
 
-/* === TYPOGRAPHY === */
+/* === Typography === */
 strong {
-  font-family: var(--framer-font-family-bold);
+  font-family: var(--font-body);
   font-weight: 700;
 }
 
 em {
-  font-family: var(--framer-font-family-italic);
+  font-family: var(--font-body);
+  font-style: italic;
   font-weight: 500;
 }
 
-a {
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--color-indigo);
-}
-
-/* === UTILITY CLASSES === */
-.text-center {
-  text-align: center;
-}
-
-/* === MAIN LAYOUT === */
+/* === Layout Containers === */
 #main {
   display: flex;
   justify-content: space-between;
@@ -184,127 +131,36 @@ a:hover {
   overflow: hidden;
 }
 
-/* === LAYOUT CONTAINERS === */
 .wrapper {
-  background-color: var(--sand);
   overflow: scroll;
   overflow: overlay;
   overflow-x: hidden;
   height: 100dvh;
 }
 
-.page-container {
-  background-color: var(--sand);
-  overflow-y: scroll;
-}
-
-.scrollable-content {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.scrollable-content-dark {
-  overflow-y: auto;
-}
-
-/* === SCROLLBAR STYLES === */
+/* === Scrollbar === */
 ::-webkit-scrollbar {
   width: 10px;
   border-radius: 1rem;
-  background-color: var(--sand);
+  background-color: var(--gray-light);
   display: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-white-overlay-dark);
-  border-radius: 0;
-}
-
-.page-container::-webkit-scrollbar {
-  width: 10px;
-  border-radius: 1rem;
-  background-color: transparent;
-}
-
-.page-container::-webkit-scrollbar-thumb {
-  background-color: var(--color-white-overlay-dark);
-  border-radius: 0;
-}
-
-.scrollable-content::-webkit-scrollbar {
-  width: 10px;
-  border-radius: 1rem;
-  background-color: transparent;
-}
-
-.scrollable-content::-webkit-scrollbar-thumb {
-  background-color: var(--color-sand-overlay);
-  border-radius: 0;
-}
-
-.scrollable-content-dark::-webkit-scrollbar {
-  width: 10px;
-  border-radius: 1rem;
-  background-color: var(--color-dark-bg);
-}
-
-.scrollable-content-dark::-webkit-scrollbar-thumb {
-  background-color: var(--color-white-overlay-dark);
-  border-radius: 0;
-}
-
-/* === TYPOGRAPHY UTILITY CLASSES === */
+/* === Typography Utility Classes === */
 .title-lg {
+  font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .title-md {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .title-sm {
+  font-family: var(--font-heading);
   font-size: 1.2rem;
-  font-weight: 500;
-}
-
-/* === BUTTONS === */
-.btn-border-reveal {
-  background-color: white;
-  color: black;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  border-radius: 0.75rem;
-  height: 3rem;
-  box-shadow:
-    0 0.2rem 0.5rem var(--color-white-overlay-light),
-    0 0.5rem 1.5rem var(--color-white-overlay-lighter);
-  outline: none;
-}
-
-.btn-border-reveal::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: black;
-  z-index: 0;
-  transition: width 0.4s ease;
-  border-radius: 0.75rem;
-}
-
-.btn-border-reveal:hover::after {
-  width: 100%;
-}
-
-.btn-border-reveal:hover span {
-  color: white;
-  transition: color 0.4s ease;
-  z-index: 999;
+  font-weight: 700;
 }

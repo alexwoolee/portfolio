@@ -1,11 +1,9 @@
-/* CSS files */
+// CSS file
 import './styles.css'
-
-/* React */
+// React 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-/* Components */
+// Components
 import App from '@/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

@@ -1,11 +1,10 @@
-/* Node.js modules */
+// Node.js modules 
 import path from 'path'
 import fs from 'fs'
-
-/* Third-party libraries */
+// Third-party libraries 
 import matter from 'gray-matter'
 
-/* Constants */
+
 const postsDirectory = path.join(process.cwd(), '_posts')
 
 export function getPostFiles() {
@@ -17,20 +16,16 @@ export function getPostFiles() {
 			id: id
 		}
 	}) 
-
 	return allPostsData
 }
 
 export function getSinglePost(id) { 
-	const fileName = id + ".md" 
-	const fileDirectory = path.join(postsDirectory, fileName)
-	const fileContent = fs.readFileSync(fileDirectory, { encoding: 'utf8', flag: 'r' }) 
-	const resultObject = matter(fileContent) 
-	resultObject.id = id
-
-	console.log(resultObject)
-	
-	return resultObject
+	const fileName = id + ".md";
+	const fileDirectory = path.join(postsDirectory, fileName);
+	const fileContent = fs.readFileSync(fileDirectory, { encoding: 'utf8', flag: 'r' });
+	const resultObject = matter(fileContent);
+	resultObject.id = id;
+	return resultObject;
 }
 
 

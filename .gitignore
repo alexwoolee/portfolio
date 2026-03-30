@@ -28,3 +28,6 @@ dist-ssr
 
 # Posts 
 ./src/posts/*.md
+
+# Backup/Archive
+./src/components/ProjectArchive

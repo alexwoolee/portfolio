@@ -1,38 +1,24 @@
-/* CSS files */
-import "./styles.css"
-import "aos/dist/aos.css"
-import 'simplebar-react/dist/simplebar.min.css'
-
-/* React hooks */
-import { useEffect } from "react"
-
 /* Third-party libraries */
 import { useParams } from "react-router"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
-import AOS from "aos"
-import SimpleBar from 'simplebar-react'
 
 /* Components */
-import Layout from "@/components/Layout/Layout.jsx"
-import Home from "@/components/HomeSection/Home.jsx"
-import About from "@/components/AboutSection/About.jsx"
-import Projects from "@/components/ProjectShowcase/Projects.jsx"
-import Blog from "@/components/BlogSection/Blog.jsx"
-import BlogPage from "@/components/BlogSection/BlogPage.jsx"
-import Settings from "@/components/SettingsSection/Settings.jsx"
+import Layout from "@/components/layout/Layout.jsx"
+import Home from "@/components/home/Home.jsx"
+import About from "@/components/about/About.jsx"
+import Projects from "@/components/projects/Projects.jsx"
+import Blog from "@/components/blog/Blog.jsx"
+import BlogPage from "@/components/blog/BlogPage.jsx"
+import Settings from "@/components/settings/Settings.jsx"
+import Interface from "@/components/interfaces/Interface"
+import BackgroundMusic from "@/components/media/BackgroudMusic"
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true
-    })
-  }, [])
-
   let { id } = useParams()
 
   return (
     <>
+      <BackgroundMusic />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -42,6 +28,7 @@ function App() {
             <Route path="/proj" element={<Projects />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
             <Route path="/settings" element={<Settings />}></Route>
+            <Route path="/interface" element={<Interface />}></Route>
             <Route path="blog/:id" element={<BlogPage />} /> 
           </Route>
         </Routes>

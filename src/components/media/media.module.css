@@ -6,8 +6,8 @@
   bottom: 0;
   width: 100%;
   padding: 1rem;
-  background-color: var(--sand);
-  border-top: 1px solid var(--color-border-light);
+  background-color: var(--gray-light);
+  border-top: 6px solid var(--red-orange);
   gap: 0.8rem;
 }
 
@@ -35,17 +35,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: var(--font-body);
 }
 
 .musicTitle {
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   margin-top: 0;
   margin-bottom: 0.2rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-weight: 700;
 }
 
 .musicArtist {
+  font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 550;
   color: var(--color-grey);
@@ -70,28 +74,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: 1px solid var(--teal-medium);
   background: transparent;
   cursor: pointer;
-  color: var(--black);
-  transition: transform 0.2s ease;
+  color: var(--teal-medium);
+  transition: all 0.2s ease;
 }
 
 .musicBtn:hover {
   transform: scale(1.1);
-  background-color: var(--color-black-overlay);
+  background-color: var(--red-orange);
+  color: var(--gray-light);
 }
 
 .playBtn {
   width: 40px;
   height: 40px;
-  color: var(--white);
-  background-color: var(--dark-murk);
+  color: var(--teal-medium);
+  background-color: white;
+  border: 1px solid var(--teal-medium);
 }
 
 .playBtn:hover {
-  background-color: var(--dark-murk);
-  color: white;
+  background-color: var(--red-orange);
+  color: var(--gray-light);
 }
 
 .skipBtn {

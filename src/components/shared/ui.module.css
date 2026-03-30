@@ -1,0 +1,132 @@
+/* === CONTACT BUTTON WRAPPER === */
+.contactButtonWrapper {
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: white; 
+  color: var(--teal-medium);
+  border-radius: 9999px;
+  border: 1px solid var(--teal-medium);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.contactButtonWrapper:hover {
+  background-color: var(--red-orange);
+  color: var(--gray-light);
+}
+
+/* === CONTACT POPUP COMPONENT === */
+.copyIcon {
+  border: 2px solid var(--red-orange);
+  border-radius: 0.35rem;
+  padding: 0.4rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.copyIcon:hover {
+  background-color: var(--green);
+}
+
+.popupWrapper {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 3.7rem;
+  padding: 1rem;
+  width: 18rem;
+  height: fit-content;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--murk);
+  z-index: 200;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.socialRedirect {
+  background-color: var(--color-black);
+  color: var(--color-text-secondary);
+  font-size: small;
+  width: 100%;
+  margin: 0 1rem 0 1rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popupSocialIcon {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* === TOGGLE BUTTON === */
+.toggleBtn {
+  font-family: var(--font-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* === Buttons === */
+.btnBorderReveal {
+  background-color: white;
+  color: var(--teal-medium);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  height: 3rem;
+  box-shadow:
+    0 0.2rem 0.5rem var(--color-white-overlay-light),
+    0 0.5rem 1.5rem var(--color-white-overlay-lighter);
+  outline: none;
+}
+
+.btnBorderReveal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--red-orange);
+  z-index: 0;
+  transition: width 0.4s ease;
+  border-radius: 0.75rem;
+}
+
+.btnBorderReveal:hover::after {
+  width: 100%;
+}
+
+.btnBorderReveal:hover span {
+  color: var(--gray-light);
+  transition: color 0.4s ease;
+  z-index: 999;
+}

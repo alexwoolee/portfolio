@@ -1,30 +1,78 @@
+.layoutRoot {
+  --sea-deep: #07263d;
+  --sea-mid: #0e5f87;
+  --sea-foam: #7ecbe8;
+  --sand-light: #f2e4bd;
+  --sand-mid: #dcc693;
+  --ink-soft: #113044;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--sand-light) 0%, #e8d8ac 45%, var(--sand-mid) 100%);
+}
+
+.layoutRootPlain {
+  background: transparent;
+}
+
+.layoutRootPlain::after {
+  display: none;
+}
+
+.layoutRoot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.16) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 42% 52%, rgba(132, 106, 57, 0.18) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle at 73% 24%, rgba(255, 255, 255, 0.14) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 88% 66%, rgba(117, 92, 49, 0.2) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle at 30% 76%, rgba(112, 89, 46, 0.14) 0 0.9px, transparent 1.4px);
+  background-size: 140px 100px, 160px 120px, 130px 92px, 170px 120px, 210px 150px;
+  opacity: 0.72;
+  z-index: 0;
+}
+
+.layoutRoot > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* === COLUMN CONTAINER === */
 .column {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  border-right: var(--border-gray) 1px solid;
   position: relative;
   width: 18rem;
   z-index: 1000;
-
   transition: width 0.1s ease-in-out;
-
-  overflow: hidden;
+  overflow: visible;
   white-space: nowrap;
-
-  /* Since column is flex item of #main it will shrink */
-  flex-shrink: 0; /* Tell it to not shrink */
+  flex-shrink: 0;
+  filter: drop-shadow(12px 0 18px rgba(4, 24, 40, 0.22));
 }
 
 /* === Minimized Column === */
 .minimizedColumn {
-  width: 4rem;
+  width: 64px;
 }
 
 .minimizedColumn .linkListHeader {
   flex-direction: row;
   justify-content: center;
+}
+
+.minimizedColumn .swimmingBackground {
+  width: calc(100% + var(--wave-reach)) !important;
+  margin-right: auto;
+  border-radius: 0.2rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: 0 !important;
 }
 
 .minimizedColumn .textLogo {
@@ -36,22 +84,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding: 0.5rem;
+  padding: 1rem 0 1rem 1rem;
 }
 
 /* === LINK LIST HEADER === */
 .linkListHeader {
   height: 100%;
   min-height: 50px;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  gap: 0.75rem;
+  gap: 6rem;
   margin-bottom: 1rem;
-
   font-size: larger;
 }
 
@@ -74,13 +117,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  transition: background-color 0.3s ease-in-out;
+  background-color: transparent;
+  color: #0f3552;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .panelLeft {
-  stroke: var(--murk);
+  stroke: #0f3552;
   stroke-width: 3px;
 }
 
@@ -89,10 +133,12 @@
 }
 
 .panelIconWrapper:hover {
-  background-color: var(--murk);
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 0.4rem;
 }
+
 .panelIconWrapper:hover .panelLeft {
-  stroke: white;
+  stroke: #0a2e47;
   stroke-width: 3px;
 }
 
@@ -104,30 +150,105 @@
   flex-direction: row;
   padding: 0.45rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color 0.12s linear;
   background-color: transparent;
-  color: var(--color-muted-text);
-
+  color: #10344f;
+  border: 1px solid transparent;
   width: 100%;
   cursor: pointer;
+  position: relative;
+  isolation: isolate;
 }
 
 .link p {
   margin-left: 1rem;
 }
 
-.link:hover {
-  background-color: var(--color-white-overlay);
-  color: black;
-  border-radius: 0.5rem;
+/* This is the floating object animated by Framer Motion between links */
+.swimmingBackground {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  border-radius: 0.2rem;
+  background-color: transparent;
+  width: calc(100% + var(--wave-reach));
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  transform-origin: left center;
+  z-index: -1;
 }
 
-.activeLink {
-  border-radius: 0.2rem;
-  background-color: var(--murk) !important;
-  color: white !important;
-  box-shadow: 0 2px 8px var(--color-shadow-light);
-  transform: scale(1.02);
+/* Flat Rectangle inside the floating object */
+.swimmingBackground::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: -2px; /* Right extends slightly to hide seam perfectly */
+  background-color: #0e5f87;
+  border-top-left-radius: 0.44rem;
+  border-bottom-left-radius: 0.44rem;
+  z-index: -1;
+  animation: tideLinkBg 3.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.activeText {
+  color: #f3fbff !important;
+}
+
+/* Text and Icon Perspective when Active */
+.activeText .linkImg, .activeText svg, .activeText p {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+}
+
+/* === FIX FOR MINIMIZED LINKS === */
+.minimizedColumn .link p,
+.minimizedColumn .link span,
+.minimizedColumn .link h1 {
+  display: none;
+}
+
+.minimizedColumn .link {
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0 auto 0.5rem auto;
+}
+
+.minimizedColumn .swimmingBackground {
+  width: calc(100% + var(--wave-reach)) !important;
+  border-radius: 0.2rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: 0 !important;
+}
+
+.minimizedColumn .swimmingBackground::after {
+  display: none;
+}
+
+.minimizedColumn .linkImg,
+.minimizedColumn .iconWrapper {
+  margin: 0;
+}
+
+@keyframes tideLink {
+  0% { transform: translateY(0) skewX(0deg); }
+  25% { transform: translateY(-1px) skewX(-0.45deg); }
+  50% { transform: translateY(0) skewX(0.4deg); }
+  75% { transform: translateY(1px) skewX(-0.3deg); }
+  100% { transform: translateY(0) skewX(0deg); }
+}
+
+@keyframes tideLinkBg {
+  0% { border-top-left-radius: 0.44rem; border-bottom-left-radius: 0.44rem; }
+  25% { border-top-left-radius: 0.58rem; border-bottom-left-radius: 0.7rem; }
+  50% { border-top-left-radius: 0.68rem; border-bottom-left-radius: 0.58rem; }
+  75% { border-top-left-radius: 0.56rem; border-bottom-left-radius: 0.76rem; }
+  100% { border-top-left-radius: 0.44rem; border-bottom-left-radius: 0.44rem; }
 }
 
 .iconWrapper {
@@ -150,11 +271,77 @@
 }
 
 .linkTitle {
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .linkListTitle {
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* === TOGGLE BUTTONS === */
+.toggles {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.toggleBtn {
+  font-family: var(--font-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--red-orange);
+  background-color: transparent;
+  color: var(--teal-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleBtn:hover {
+  background-color: var(--red-orange);
+  color: var(--gray-light);
+}
+
+.activeBtn {
+  background-color: var(--red-orange) !important;
+  color: var(--gray-light) !important;
+}
+
+.mainContent {
+  --sidebar-open-footprint: calc(18rem + 2.5rem);
+  --sidebar-minimized-footprint: 112px;
+
+  flex: 1 1 auto;
+  width: 100%;
+  transition: margin-left 0.1s ease-in-out;
+  background: transparent;
+}
+
+.mainContentNoOffset {
+  margin-left: 0 !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .mainContentOpen {
+    margin-left: var(--sidebar-open-footprint);
+  }
+
+  .mainContentMinimized {
+    margin-left: var(--sidebar-minimized-footprint);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContentOpen,
+  .mainContentMinimized {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -162,19 +349,22 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--sand);
+    background-color: var(--gray-light);
   }
+
   .minimizedColumn {
     width: 0;
     border: none;
     overflow: hidden;
     padding: 0;
   }
+
   .minimizedColumn .linkListHeader .panelIconWrapper {
     position: fixed;
     top: 10px;
     left: 10px;
   }
+
   .minimizedColumn .link {
     display: none;
   }
