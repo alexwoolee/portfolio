@@ -7,12 +7,22 @@ import { ArrowLeft, ChevronRight, ChevronLeft } from "lucide-react"
 import ProjectCard from "./ProjectCard"
 import ProjInfoLinks from "./ProjInfoLinks"
 import GridRowToggle from "./GridRowToggle"
+import LiquidWavyStripe from "@/components/blog/LiquidWavyStripe.jsx"
+
+/* Icons */
+import {
+  C, Cpp, CSharp, Css, GDScript, Html, Java, JavaScript, Python, Ruby, Rust, SQL, Tailwindcss, TypeScript
+} from "@/components/icons/icon.js"
 
 /* Data */
 import projects from "@/data/project-data"
 
 /* Styles */
 import styles from "./projects.module.css"
+
+const iconMap = {
+  C, Cpp, CSharp, Css, GDScript, Html, Java, JavaScript, Python, Ruby, Rust, SQL, Tailwindcss, TypeScript
+}
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null)
@@ -45,21 +55,40 @@ const Projects = () => {
         
         <div className={styles.detailContentWrapper}>
           <div className={styles.detailCard}>
-            <div className={styles.detailHeader}>
-              <h1 className={styles.detailTitle}>{selectedProject.title}</h1>
-              <p className={styles.detailAuthors}>{selectedProject.authors.join(", ")}</p>
-            </div>
+            {selectedProject.languages && selectedProject.languages.length > 0 && (
+              <div className={styles.techStackBadge}>
+                {selectedProject.languages.map((lang, idx) => {
+                  const IconConfig = iconMap[lang] || iconMap.Python;
+                  return (
+                    <div className={styles.techIconWrapper} key={idx} title={lang}>
+                      <IconConfig width={22} height={22} />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
-            <div className={styles.detailImageWrapper}>
-              <img src={selectedProject.imageUrl} alt={selectedProject.title} className={styles.detailMainImg} />
-            </div>
+            <div className={styles.detailMainFlex}>
+              <div className={styles.detailRight}>
+                <div className={styles.detailHeader}>
+                  <h1 className={styles.detailTitle}>{selectedProject.title}</h1>
+                  <p className={styles.detailAuthors}>{selectedProject.authors.join(", ")}</p>
+                </div>
 
-            <div className={styles.detailBody}>
-              <p className={styles.detailDesc}>{selectedProject.description}</p>
-            </div>
-            
-            <div className={styles.detailLinksContainer}>
-              <ProjInfoLinks project={selectedProject} />
+                <div className={styles.detailBody}>
+                  <p className={styles.detailDesc}>{selectedProject.description}</p>
+                </div>
+
+                <div className={styles.detailLinksContainer}>
+                  <ProjInfoLinks project={selectedProject} />
+                </div>
+              </div>
+
+              <div className={styles.detailLeft}>
+                <div className={styles.detailImageWrapper}>
+                  <img src={selectedProject.imageUrl} alt={selectedProject.title} className={styles.detailMainImg} />
+                </div>
+              </div>
             </div>
           </div>
           
@@ -85,10 +114,12 @@ const Projects = () => {
   }
 
   return (
-    <div className={styles.projectsPage} >
+    <>
+      <LiquidWavyStripe />
+      <div className={styles.projectsPage} >
 
-      {/* いち */}
-      <div className={`${styles.projectsContainer} scrollable-content`}>
+        {/* いち */}
+        <div className={`${styles.projectsContainer} scrollable-content`}>
         <div className={styles.projects}>
           <div className={styles.projectsOptions}>
             <GridRowToggle view={view} onToggle={handleView} />
@@ -119,6 +150,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
