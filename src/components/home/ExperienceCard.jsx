@@ -5,17 +5,15 @@ const ExperienceCard = ({ img, title, period, company }) => {
   return (
     <div>
       <div className={styles.exp}>
-        <div className={styles.expLeft}>
-          <img
-            src={img}
-            alt={`${company} logo`}
-            className={styles.expImg}
-          ></img>
-          <h2 className={`${styles.expTitle} title-lg`}>{title}</h2>
-        </div>
-        <div className={styles.expRight}>
-          <h1 className={`${styles.company} title-lg`}>{company}</h1>
-          <h3 className={styles.expPeriod}>{period}</h3>
+        <img
+          src={img}
+          alt={`${company} logo`}
+          className={styles.expLogo}
+        />
+        <div className={styles.expInfo}>
+          <h1 className={`${styles.expTitle} title-lg`}>{company}</h1>
+          <p className={styles.expMeta}>{title}</p>
+          <p className={styles.expMeta}>{period}</p>
         </div>
       </div>
       <div className={styles.divider}></div>

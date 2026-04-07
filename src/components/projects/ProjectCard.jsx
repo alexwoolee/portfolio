@@ -6,8 +6,8 @@ import styles from "./projects.module.css"
 
 const ProjectCard = ({ project, onSelect }) => {
   return (
-    <div onClick={() => onSelect(project)}>
-      <Link>
+    <div onClick={() => onSelect(project)} style={{ height: "100%" }}>
+      <Link style={{ display: "block", height: "100%", textDecoration: "none" }}>
         <div className={styles.projCardContent}>
           <img
             src={project.imageUrl}
@@ -17,7 +17,7 @@ const ProjectCard = ({ project, onSelect }) => {
         {/* authors or references */}
         <div className={styles.projTxt}>
           <h1 className={styles.projTitle}>{project.title}</h1>
-          {/* <p className={styles.projAuthors}>{project.txt}</p> */}
+          <p className={styles.projSummary}>{project.description}</p>
         </div>
         </div>
       </Link>

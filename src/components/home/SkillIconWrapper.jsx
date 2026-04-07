@@ -2,7 +2,7 @@ import styles from "./home.module.css";
 
 // Color mapping based on dominant colors from each icon's SVG
 const iconColors = {
-  C: "#a9bacd",
+  C: "#00599c",
   Cpp: "#00599c",
   CSharp: "#9B4F96",
   Css: "#1572B6",
@@ -28,16 +28,14 @@ const hexToRgba = (hex, opacity = 0.4) => {
 
 const SkillIconWrapper = ({ IconComponent, iconName }) => {
   const color = iconColors[iconName] || "#434447";
-  const backgroundColor = hexToRgba(color, 0.4); // Uses the colors set above
+  const backgroundColor = hexToRgba(color, 0.08); // Uses the colors set above
 
   const containerStyle = {
     backgroundColor: backgroundColor,
-    width: "2.3rem",
-    minWidth: "2.3rem",
   };
 
   return (
-    <div className={styles.languageClass} style={containerStyle}>
+    <div className={styles.languageClass} style={containerStyle} title={iconName}>
       <IconComponent className={styles.languageIcon} />
     </div>
   );

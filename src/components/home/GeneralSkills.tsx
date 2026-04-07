@@ -23,7 +23,7 @@ const skills: SkillItem[] = [
 ]
 
 const SkillLabel = ({ text }: SkillLabelProps) => {
-  return <p className="bg-[var(--color-lime-green)] py-3 px-4 rounded-3xl mr-3 mb-3">{text}</p>
+  return <p className="bg-[#fde047] py-3 px-4 rounded-3xl mr-3 mb-3">{text}</p>
 }
 
 const GeneralSkills = () => {
