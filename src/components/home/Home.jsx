@@ -22,6 +22,7 @@ import Button from "@/components/shared/Button.jsx"
 import Education from "./Education.jsx"
 import ContactCard from "./ContactCard.jsx"
 import Footer from "@/components/shared/Footer.jsx"
+import LiquidWavyStripe from "@/components/blog/LiquidWavyStripe.jsx"
 
 /* Assets */
 import PFP from "@/assets/gifs/doggiecorgi_swim.gif"
@@ -47,9 +48,11 @@ const Home = () => {
   const iconSize = 50
 
   return (
-    <div className="wrapper">
-      <div className={`${styles.content} scrollable-conten`}>
-        <div className="w-full flex flex-col lg:justify-start justify-start items-center lg:items-center gap-8">
+    <>
+      <LiquidWavyStripe />
+      <div className="wrapper">
+        <div className={`${styles.content} scrollable-conten`}>
+          <div className="w-full flex flex-col lg:justify-start justify-start items-center lg:items-center gap-8">
           <img src={PFP} alt="Profile picture"
             className={`${styles.profile} w-32 h-32 border rounded-full border-transparent object-cover`}
           ></img>
@@ -153,6 +156,7 @@ const Home = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 
